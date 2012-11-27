@@ -6,3 +6,6 @@
 (add-to-list 'package-archives
              '("marmalade" . "http://marmalade-repo.org/packages/") t)
 (package-initialize)
+
+;; enabled disabled commands
+(put 'dired-find-alternate-file 'disabled nil)
