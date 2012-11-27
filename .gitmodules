@@ -1,0 +1,3 @@
+[submodule "vendor/chef-mode"]
+	path = vendor/chef-mode
+	url = git://github.com/mpasternacki/chef-mode.git
