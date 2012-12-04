@@ -9,6 +9,15 @@
 
 (setq custom-vendor-dir (concat user-emacs-directory "vendor/"))
 
+;; Various integrations
+(add-hook 'nrepl-connected-hook 'esk-turn-on-paredit)
+
+;; File associations
+(add-to-list 'auto-mode-alist '("\\.md$"       . markdown-mode))
+(add-to-list 'auto-mode-alist '("\\.markdown$" . markdown-mode))
+(add-to-list 'auto-mode-alist '("\\.yaml$"     . yaml-mode))
+(add-to-list 'auto-mode-alist '("\\.yml$"      . yaml-mode))
+
 ;; chef mode
 (add-to-list 'load-path (concat custom-vendor-dir "chef-mode"))
 (require 'chef-mode)
