@@ -12,6 +12,10 @@
 ;; Various integrations
 (add-hook 'nrepl-connected-hook 'esk-turn-on-paredit)
 
+;; somehow these requires doesn't happen on startup. bug in libraries?
+(require 'ruby-tools)
+(require 'yaml-mode)
+
 ;; File associations
 (add-to-list 'auto-mode-alist '("\\.md$"       . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.markdown$" . markdown-mode))
