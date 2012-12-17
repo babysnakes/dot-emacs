@@ -27,5 +27,8 @@
 (require 'chef-mode)
 (setq chef-use-rvm nil)
 
+;; ignored files in 'ffip'
+(setq ffip-find-options "-not -regex \".*node_modules/.*\"")
+
 ;; enabled disabled commands
 (put 'dired-find-alternate-file 'disabled nil)
