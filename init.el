@@ -27,6 +27,9 @@
 (require 'chef-mode)
 (setq chef-use-rvm nil)
 
+;; some keyboard shortcut
+(global-set-key (kbd "C-c =") 'er/expand-region)
+
 ;; ignored files in 'ffip'
 (setq ffip-find-options "-not -regex \".*node_modules/.*\"")
 
