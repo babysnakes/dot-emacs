@@ -11,6 +11,7 @@
 
 ;; Various integrations
 (add-hook 'nrepl-connected-hook 'esk-turn-on-paredit)
+(add-hook 'html-mode-hook 'yas-minor-mode)
 
 ;; somehow these requires doesn't happen on startup. bug in libraries?
 (require 'ruby-tools)
