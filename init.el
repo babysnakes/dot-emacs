@@ -7,7 +7,8 @@
              '("marmalade" . "http://marmalade-repo.org/packages/") t)
 (package-initialize)
 
-(setq custom-vendor-dir (concat user-emacs-directory "vendor/"))
+(setq custom-vendor-dir
+      (concat (expand-file-name user-emacs-directory) "vendor/"))
 
 ;; Various integrations
 (add-hook 'nrepl-connected-hook 'esk-turn-on-paredit)
@@ -22,6 +23,10 @@
 (add-to-list 'auto-mode-alist '("\\.markdown$" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.yaml$"     . yaml-mode))
 (add-to-list 'auto-mode-alist '("\\.yml$"      . yaml-mode))
+
+;; Markdown styling
+(setq markdown-css-path
+      (concat custom-vendor-dir "files/Clearness.css"))
 
 ;; chef mode
 (add-to-list 'load-path (concat custom-vendor-dir "chef-mode"))
