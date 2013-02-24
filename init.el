@@ -39,6 +39,9 @@
 ;; ignored files in 'ffip'
 (setq ffip-find-options "-not -regex \".*node_modules/.*\"")
 
+;; Ruby settings
+(setq ruby-deep-indent-paren nil)
+
 ;; enabled disabled commands
 (put 'dired-find-alternate-file 'disabled nil)
 
