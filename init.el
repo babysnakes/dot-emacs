@@ -1,3 +1,7 @@
+;; Unset my custom LANG environment to avoid spell checker issues
+(setenv "LANG")
+(setenv "LC_TIME")
+
 ;; This file should be ignored by git.
 (setq custom-file
       (concat (expand-file-name user-emacs-directory) "custom.el"))
