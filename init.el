@@ -46,6 +46,9 @@
 ;; Ruby settings
 (setq ruby-deep-indent-paren nil)
 
+;; CoffeeScript
+(setq coffee-tab-width 2)
+
 ;; enabled disabled commands
 (put 'dired-find-alternate-file 'disabled nil)
 
