@@ -77,3 +77,14 @@
              (set-window-start w1 s2)
              (set-window-start w2 s1)
              (setq i (1+ i)))))))
+
+;; A helper to construct ffip find options (ignored directoreis).
+;; usage:
+;; (setq ffip-find-options
+;;       (ffip--create-exclude-find-options
+;;        '("node_modules"
+;;          "target"
+;;          "vendor")))
+(defun ffip--create-exclude-find-options (names)
+  (mapconcat (lambda (name)
+               (concat "-not -regex \".*" name ".*\"")) names " "))
