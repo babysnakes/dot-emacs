@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: Insert generic tag
+# key: tag
+# --
+<${1:tagname} $2>
+  $0
+</$1>
