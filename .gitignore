@@ -3,5 +3,5 @@
 /.smex-items
 /url/
 /custom.el
-
+.mc-lists.el
 /tramp
