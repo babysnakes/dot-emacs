@@ -14,6 +14,9 @@
 (setq custom-vendor-dir
       (concat (expand-file-name user-emacs-directory) "vendor/"))
 
+;; enable projectile
+(projectile-global-mode)
+
 ;; Various integrations
 (add-hook 'nrepl-connected-hook 'esk-turn-on-paredit)
 (add-hook 'html-mode-hook 'yas-minor-mode)
