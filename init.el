@@ -5,6 +5,7 @@
 ;; This file should be ignored by git.
 (setq custom-file
       (concat (expand-file-name user-emacs-directory) "custom.el"))
+(load custom-file)
 
 (require 'package)
 (add-to-list 'package-archives
