@@ -21,6 +21,7 @@
 ;; Various integrations
 (add-hook 'nrepl-connected-hook 'esk-turn-on-paredit)
 (yas-global-mode t) ; always load yas
+(define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
 
 ;; somehow these requires doesn't happen on startup. bug in libraries?
 (require 'ruby-tools)
