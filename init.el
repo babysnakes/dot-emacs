@@ -41,6 +41,7 @@
 (add-to-list 'load-path (concat custom-vendor-dir "chef-mode"))
 (require 'chef-mode)
 (setq chef-use-rvm nil)
+(add-to-list 'auto-mode-alist '("Berksfile$" . ruby-mode))
 
 ;; some keyboard shortcut
 (global-set-key (kbd "C-c =") 'er/expand-region)
