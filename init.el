@@ -20,8 +20,7 @@
 
 ;; Various integrations
 (add-hook 'nrepl-connected-hook 'esk-turn-on-paredit)
-(add-hook 'html-mode-hook 'yas-minor-mode)
-(add-hook 'js-mode-hook 'yas-minor-mode)
+(yas-global-mode t) ; always load yas
 
 ;; somehow these requires doesn't happen on startup. bug in libraries?
 (require 'ruby-tools)
@@ -100,7 +99,6 @@
           (define-key js2-mode-map "{" 'paredit-open-curly)
           (define-key js2-mode-map "}" 'paredit-close-curly-and-newline)
           (add-hook 'js2-mode-hook 'esk-paredit-nonlisp)
-          (add-hook 'js2-mode-hook 'yas-minor-mode)
           ;; required? - fixes problem with pretty function font-lock
           ;; (define-key js2-mode-map (kbd ",") 'self-insert-command)
           (font-lock-add-keywords
