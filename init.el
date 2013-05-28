@@ -7,6 +7,9 @@
       (concat (expand-file-name user-emacs-directory) "custom.el"))
 (load custom-file)
 
+(defalias 'inf-ruby-keys 'inf-ruby-setup-keybindings
+  "ruby-inf rename a function which causes an error in starter-kit-ruby")
+
 (require 'package)
 (add-to-list 'package-archives
              '("marmalade" . "http://marmalade-repo.org/packages/") t)
