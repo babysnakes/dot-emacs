@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# name: Chef bash resource
+# key: cbash
+# group: chef
+# --
+bash "$1" do
+  user "${2:root}"${3:
+  cwd ${4:"$5"}}
+  code $6
+end

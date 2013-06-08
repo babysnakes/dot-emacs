@@ -1,0 +1,14 @@
+# -*- mode: snippet -*-
+# name: Chef recipe header
+# key: cheader
+# group: chef
+# --
+#
+# Cookbook Name:: ${1:`(and buffer-file-name (file-name-nondirectory (directory-file-name (locate-dominating-file (buffer-file-name) "recipes"))))`}
+# Recipe:: ${2:`(and buffer-file-name (file-name-nondirectory (file-name-sans-extension (buffer-file-name))))`}
+#
+# Copyright (C) 2013 ${3:YOUR_NAME}
+# 
+# ${4:All rights reserved - Do Not Redistribute}
+#
+# ${5:Description}

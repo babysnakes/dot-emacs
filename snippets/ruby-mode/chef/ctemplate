@@ -1,0 +1,11 @@
+# -*- mode: snippet -*-
+# name: Chef template resource
+# key: ctemplate
+# group: chef
+# --
+template "$1" do${5:
+  source "${6:template_name}"}
+  owner "${2:root}"
+  group "${3:root}"
+  mode ${4:0640}
+end

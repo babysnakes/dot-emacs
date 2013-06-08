@@ -1,0 +1,12 @@
+# -*- mode: snippet -*-
+# name: Chef directory resource
+# key: cdirectory
+# group: chef
+# --
+directory ${1:"$2"} do
+  owner ${3:"${4:root}"}
+  group ${5:"${6:root}"}
+  mode ${7:0750}
+  action :${8:create}${9:
+  recursive ${10:true}}
+end

@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: Chef cache path
+# key: cache-path
+# group: chef
+# --
+${1:cache_path} = Chef::Config[:file_cache_path]
