@@ -5,7 +5,7 @@
 ;; This file should be ignored by git.
 (setq custom-file
       (concat (expand-file-name user-emacs-directory) "custom.el"))
-(load custom-file)
+(and (file-exists-p custom-file) (load custom-file))
 
 (defalias 'inf-ruby-keys 'inf-ruby-setup-keybindings
   "ruby-inf rename a function which causes an error in starter-kit-ruby")
