@@ -61,6 +61,11 @@
 ;; enabled disabled commands
 (put 'dired-find-alternate-file 'disabled nil)
 
+;; magit highlighting in terminal hides the changes :(
+(eval-after-load 'magit
+  (when (not window-system)
+    (custom-set-faces '(magit-item-highlight ((t nil))))))
+
 ;; HERLPERS ;;
 
 ;; http://whattheemacsd.com/buffer-defuns.el-02.html
