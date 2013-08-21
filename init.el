@@ -40,6 +40,10 @@
 (setq markdown-css-path
       (concat custom-vendor-dir "files/Clearness.css"))
 
+;; window-number mode (somehow it doesn't happen automatically)
+(require 'window-number)
+(window-number-mode)
+
 ;; chef mode
 (add-to-list 'load-path (concat custom-vendor-dir "chef-mode"))
 (require 'chef-mode)
