@@ -10,10 +10,8 @@
 (defalias 'inf-ruby-keys 'inf-ruby-setup-keybindings
   "ruby-inf rename a function which causes an error in starter-kit-ruby")
 
-(require 'package)
-(add-to-list 'package-archives
-             '("marmalade" . "http://marmalade-repo.org/packages/") t)
-(package-initialize)
+(add-to-list 'load-path user-emacs-directory)
+(require 'init-packages)
 
 (setq custom-vendor-dir
       (concat (expand-file-name user-emacs-directory) "vendor/"))
