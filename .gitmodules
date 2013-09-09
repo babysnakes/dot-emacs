@@ -1,3 +1,6 @@
 [submodule "vendor/chef-mode"]
 	path = vendor/chef-mode
 	url = git@github.com:babysnakes/chef-mode.git
+[submodule "vendor/js3-mode"]
+	path = vendor/js3-mode
+	url = https://github.com/thomblake/js3-mode.git

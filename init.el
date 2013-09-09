@@ -16,6 +16,8 @@
 (setq custom-vendor-dir
       (concat (expand-file-name user-emacs-directory) "vendor/"))
 
+(require 'init-javascript)
+
 ;; enable projectile
 (projectile-global-mode)
 
@@ -104,17 +106,3 @@
 (defun ffip--create-exclude-find-options (names)
   (mapconcat (lambda (name)
                (concat "-not -regex \".*" name ".*\"")) names " "))
-
-;; Mostly copied from starter-kit-js, settings to enable when using js2-mode.
-(eval-after-load 'js2-mode
-  '(progn (setq-default js2-basic-offset 2)
-          (define-key js2-mode-map "{" 'paredit-open-curly)
-          (define-key js2-mode-map "}" 'paredit-close-curly-and-newline)
-          (add-hook 'js2-mode-hook 'esk-paredit-nonlisp)
-          ;; required? - fixes problem with pretty function font-lock
-          ;; (define-key js2-mode-map (kbd ",") 'self-insert-command)
-          (font-lock-add-keywords
-           'js2-mode `(("\\(function *\\)("
-                        (0 (progn (compose-region (match-beginning 1)
-                                                  (match-end 1) "\u0192")
-                                  nil)))))))

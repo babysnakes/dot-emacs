@@ -22,7 +22,6 @@
                       expand-region
                       git-commit-mode
                       inf-ruby
-                      js2-mode
                       less-css-mode
                       markdown-mode
                       nrepl-ritz
