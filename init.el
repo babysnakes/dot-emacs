@@ -7,7 +7,9 @@
       (concat (expand-file-name user-emacs-directory) "custom.el"))
 (and (file-exists-p custom-file) (load custom-file))
 
-(defalias 'inf-ruby-keys 'inf-ruby-setup-keybindings
+;; TODO: Temporary hack until I'll find the real way to fix it!!!!
+(defun empty-fn ())
+(defalias 'inf-ruby-keys 'empty-fn
   "ruby-inf rename a function which causes an error in starter-kit-ruby")
 
 (add-to-list 'load-path user-emacs-directory)
