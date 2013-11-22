@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: RevealJS section
+# key: section
+# --
+<section>
+  $0
+</section>

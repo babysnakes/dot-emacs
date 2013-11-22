@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: Revealjs speaker notes
+# key: aside
+# --
+<aside class="notes">
+$0
+</aside>
