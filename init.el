@@ -7,104 +7,36 @@
       (concat (expand-file-name user-emacs-directory) "custom.el"))
 (and (file-exists-p custom-file) (load custom-file))
 
-;; TODO: Temporary hack until I'll find the real way to fix it!!!!
-(defun empty-fn ())
-(defalias 'inf-ruby-keys 'empty-fn
-  "ruby-inf rename a function which causes an error in starter-kit-ruby")
-
 (add-to-list 'load-path user-emacs-directory)
-(require 'init-packages)
-
 (setq custom-vendor-dir
       (concat (expand-file-name user-emacs-directory) "vendor/"))
 
-(require 'init-javascript)
+(require 'init-packages)
+(require 'init-functions)
+(require 'init-ui)
 
-;; enable projectile
+;; GLOBAL SETTINGS
 (projectile-global-mode)
-
-;; Various integrations
-(add-hook 'nrepl-connected-hook 'esk-turn-on-paredit)
 (yas-global-mode t) ; always load yas
+(require 'window-number) ; doesn't load automatically!!!
+(window-number-mode)
+
 (define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
+(global-set-key (kbd "C-c =") 'er/expand-region)
+(global-set-key (kbd "C-c g") 'magit-status)
 
-;; somehow these requires doesn't happen on startup. bug in libraries?
-(require 'ruby-tools)
-(require 'yaml-mode)
-
-;; File associations
-(add-to-list 'auto-mode-alist '("\\.md$"       . markdown-mode))
-(add-to-list 'auto-mode-alist '("\\.markdown$" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.yaml$"     . yaml-mode))
 (add-to-list 'auto-mode-alist '("\\.yml$"      . yaml-mode))
 
-;; Markdown styling
-(setq markdown-css-path
-      (concat custom-vendor-dir "files/Clearness.css"))
+(setq visible-bell t
+      whitespace-style '(face trailing lines-tail tabs)
+      whitespace-line-column 80
+      diff-switches "-u")
 
-;; window-number mode (somehow it doesn't happen automatically)
-(require 'window-number)
-(window-number-mode)
-
-;; chef mode
-(add-to-list 'load-path (concat custom-vendor-dir "chef-mode"))
-(require 'chef-mode)
-(setq chef-use-rvm nil)
-(add-to-list 'auto-mode-alist '("Berksfile$" . ruby-mode))
-
-;; some keyboard shortcut
-(global-set-key (kbd "C-c =") 'er/expand-region)
-
-;; ignored files in 'ffip'
-(setq ffip-find-options "-not -regex \".*node_modules/.*\"")
-
-;; Ruby settings
-(setq ruby-deep-indent-paren nil)
-
-;; CoffeeScript
-(setq coffee-tab-width 2)
-
-;; enabled disabled commands
+;; Disabled commands
 (put 'dired-find-alternate-file 'disabled nil)
 
-;; magit highlighting in terminal hides the changes :(
-(eval-after-load 'magit
-  (when (not window-system)
-    (custom-set-faces '(magit-item-highlight ((t nil))))))
-
-;; HERLPERS ;;
-
-;; http://whattheemacsd.com/buffer-defuns.el-02.html
-(defun rotate-windows ()
-  "Rotate your windows"
-  (interactive)
-  (cond ((not (> (count-windows)1))
-         (message "You can't rotate a single window!"))
-        (t
-         (setq i 1)
-         (setq numWindows (count-windows))
-         (while  (< i numWindows)
-           (let* ((w1 (elt (window-list) i))
-                  (w2 (elt (window-list) (+ (% i numWindows) 1)))
-
-                  (b1 (window-buffer w1))
-                  (b2 (window-buffer w2))
-
-                  (s1 (window-start w1))
-                  (s2 (window-start w2)))
-             (set-window-buffer w1  b2)
-             (set-window-buffer w2 b1)
-             (set-window-start w1 s2)
-             (set-window-start w2 s1)
-             (setq i (1+ i)))))))
-
-;; A helper to construct ffip find options (ignored directoreis).
-;; usage:
-;; (setq ffip-find-options
-;;       (ffip--create-exclude-find-options
-;;        '("node_modules"
-;;          "target"
-;;          "vendor")))
-(defun ffip--create-exclude-find-options (names)
-  (mapconcat (lambda (name)
-               (concat "-not -regex \".*" name ".*\"")) names " "))
+;; language specific settings
+(require 'init-ruby)
+(require 'init-coffeescript)
+(require 'init-md)

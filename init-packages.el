@@ -1,36 +1,34 @@
+;; packages stuff
+
 (require 'package)
 (add-to-list 'package-archives
-             '("marmalade" . "http://marmalade-repo.org/packages/") t)
+             '("melpa" . "http://melpa.milkbox.net/packages/") t)
 (package-initialize)
 
 (when (not package-archive-contents)
   (package-refresh-contents))
 
 ;; list of required packages to install on startup if not installed.
-(defvar my-packages '(starter-kit
-                      starter-kit-bindings
-                      starter-kit-eshell
-                      starter-kit-js
-                      starter-kit-lisp
-                      starter-kit-ruby
-                      ace-jump-mode
-                      ack-and-a-half
-                      clojure-mode
+(defvar my-packages '(better-defaults
+		                  clojure-mode
                       clojure-test-mode
-                      coffee-mode
-                      color-theme-sanityinc-tomorrow
-                      expand-region
-                      git-commit-mode
                       inf-ruby
+                      ruby-tools
+                      rinari
+                      coffee-mode
                       less-css-mode
                       markdown-mode
-                      nrepl-ritz
-                      projectile
-                      rinari
-                      ruby-tools
                       yaml-mode
+                      color-theme-sanityinc-tomorrow
+		      color-theme-sanityinc-solarized
+                      expand-region
+		      magit
+                      git-commit-mode
+                      projectile
                       yasnippet
+		      ace-jump-mode
                       zencoding-mode
+		      paredit
                       window-number))
 
 (dolist (p my-packages)
