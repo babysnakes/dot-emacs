@@ -24,4 +24,7 @@
                                             (abbreviate-file-name (buffer-file-name))
                                           "%b"))))
 
+;; default theme on gui mode
+(when (window-system) (load-theme 'sanityinc-tomorrow-night))
+
 (provide 'init-ui)
