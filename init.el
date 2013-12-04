@@ -74,7 +74,15 @@
 (setq whitespace-style '(face tabs empty trailing lines-tail))
 (global-whitespace-mode 1)
 
+;; Paredit
+(eval-after-load 'paredit
+  ;; key bindings that works on terminal
+  '(progn
+     (define-key paredit-mode-map (kbd "M-)") 'paredit-forward-slurp-sexp)
+     (define-key paredit-mode-map (kbd "M-(") 'paredit-backward-slurp-sexp)))
+
 ;; language specific settings
 (require 'init-ruby)
 (require 'init-coffeescript)
 (require 'init-md)
+(require 'init-lisp)
