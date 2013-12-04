@@ -13,6 +13,9 @@
                       better-defaults
                       expand-region
                       helm
+                      ido-ubiquitous
+                      flx-ido
+                      smex
 
                       ;; clojure
                       clojure-mode

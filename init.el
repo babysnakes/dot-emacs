@@ -11,6 +11,12 @@
 (setq custom-vendor-dir
       (concat (expand-file-name user-emacs-directory) "vendor/"))
 
+(defvar my-savefile-dir (expand-file-name "savefile" user-emacs-directory)
+  "This folder stores all the automatically generated save/history-files.")
+
+(unless (file-exists-p my-savefile-dir)
+  (make-directory my-savefile-dir))
+
 (require 'init-packages)
 (require 'init-functions)
 (require 'init-ui)
@@ -26,13 +32,39 @@
 (global-set-key (kbd "C-c g") 'magit-status)
 ;; (global-set-key (kbd "C-c h") 'helm-mini)
 
-(add-to-list 'auto-mode-alist '("\\.yaml$"     . yaml-mode))
-(add-to-list 'auto-mode-alist '("\\.yml$"      . yaml-mode))
+(add-to-list 'auto-mode-alist '("\\.yaml$" . yaml-mode))
+(add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
 
 (setq visible-bell t
       whitespace-style '(face trailing lines-tail tabs)
       whitespace-line-column 80
       diff-switches "-u")
+
+;; ido/smex
+(require 'ido)
+(require 'ido-ubiquitous)
+(require 'flx-ido)
+(setq ido-enable-prefix nil
+      ido-enable-flex-matching t
+      ido-create-new-buffer 'always
+      ido-use-filename-at-point 'guess
+      ido-max-prospects 10
+      ido-save-directory-list-file (expand-file-name "ido.hist" my-savefile-dir)
+      ido-default-file-method 'selected-window
+      ido-auto-merge-work-directories-length -1)
+(ido-mode +1)
+(ido-ubiquitous-mode +1)
+;; smarter fuzzy matching for ido
+(flx-ido-mode +1)
+;; disable ido faces to see flx highlights
+(setq ido-use-faces nil)
+
+;; smex, remember recently and most frequently used commands
+(require 'smex)
+(setq smex-save-file (expand-file-name ".smex-items" my-savefile-dir))
+(smex-initialize)
+(global-set-key (kbd "M-x") 'smex)
+(global-set-key (kbd "M-X") 'smex-major-mode-commands)
 
 ;; Disabled commands
 (put 'dired-find-alternate-file 'disabled nil)
