@@ -9,25 +9,39 @@
   (package-refresh-contents))
 
 ;; list of required packages to install on startup if not installed.
-(defvar my-packages '(better-defaults
-		                  clojure-mode
+(defvar my-packages '(;; general
+                      better-defaults
+                      expand-region
+                      helm
+
+                      ;; clojure
+                      clojure-mode
                       clojure-test-mode
+
+                      ;; ruby
                       inf-ruby
                       ruby-tools
                       rinari
+
+                      ;; js/css/web
                       coffee-mode
                       less-css-mode
                       markdown-mode
                       yaml-mode
+                      zencoding-mode
+
+                      ;; style
                       color-theme-sanityinc-tomorrow
 		      color-theme-sanityinc-solarized
-                      expand-region
+
+                      ;; project management
 		      magit
                       git-commit-mode
                       projectile
+
+                      ;; editor
                       yasnippet
 		      ace-jump-mode
-                      zencoding-mode
 		      paredit
                       window-number))
 

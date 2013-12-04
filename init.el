@@ -24,6 +24,7 @@
 (define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
 (global-set-key (kbd "C-c =") 'er/expand-region)
 (global-set-key (kbd "C-c g") 'magit-status)
+;; (global-set-key (kbd "C-c h") 'helm-mini)
 
 (add-to-list 'auto-mode-alist '("\\.yaml$"     . yaml-mode))
 (add-to-list 'auto-mode-alist '("\\.yml$"      . yaml-mode))
