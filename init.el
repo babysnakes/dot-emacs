@@ -22,6 +22,7 @@
 (require 'init-ui)
 
 ;; GLOBAL SETTINGS
+(defalias 'yes-or-no-p 'y-or-n-p)
 (projectile-global-mode)
 (yas-global-mode t) ; always load yas
 (require 'window-number) ; doesn't load automatically!!!
@@ -32,6 +33,16 @@
 (global-set-key (kbd "C-c g") 'magit-status)
 (global-set-key (kbd "C-c h") 'helm-mini)
 (global-set-key (kbd "C-c n") 'my-cleanup-buffer)
+(global-set-key (kbd "C-x m") 'eshell)
+(define-key global-map (kbd "C-+") 'text-scale-increase)
+(define-key global-map (kbd "C--") 'text-scale-decrease)
+(global-set-key (kbd "C-<f10>") 'menu-bar-mode)
+(global-set-key (kbd "C-x C-i") 'imenu)
+(global-set-key (kbd "C-c r") 'revert-buffer)
+(global-set-key (kbd "C-c q") 'join-line)
+;; (global-set-key (kbd "M-%") 'query-replace-regexp)
+;; (global-set-key (kbd "C-M-%") 'query-replace)
+;; (global-set-key (kbd "C-M-h") 'backward-kill-word)
 
 (add-to-list 'auto-mode-alist '("\\.yaml$" . yaml-mode))
 (add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
