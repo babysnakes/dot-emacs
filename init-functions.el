@@ -24,4 +24,15 @@
              (set-window-start w2 s1)
              (setq i (1+ i)))))))
 
+(defun my-indent-buffer ()
+  "Indent the entire buffer."
+  (interactive)
+  (indent-region (point-min) (point-max)))
+
+(defun my-cleanup-buffer ()
+  "Various cleanup operations."
+  (interactive)
+  (my-indent-buffer)
+  (whitespace-cleanup))
+
 (provide 'init-functions)

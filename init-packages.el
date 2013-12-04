@@ -35,17 +35,17 @@
 
                       ;; style
                       color-theme-sanityinc-tomorrow
-		      color-theme-sanityinc-solarized
+                      color-theme-sanityinc-solarized
 
                       ;; project management
-		      magit
+                      magit
                       git-commit-mode
                       projectile
 
                       ;; editor
                       yasnippet
-		      ace-jump-mode
-		      paredit
+                      ace-jump-mode
+                      paredit
                       window-number))
 
 (dolist (p my-packages)

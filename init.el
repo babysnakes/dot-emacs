@@ -30,14 +30,13 @@
 (define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
 (global-set-key (kbd "C-c =") 'er/expand-region)
 (global-set-key (kbd "C-c g") 'magit-status)
-;; (global-set-key (kbd "C-c h") 'helm-mini)
+(global-set-key (kbd "C-c h") 'helm-mini)
+(global-set-key (kbd "C-c n") 'my-cleanup-buffer)
 
 (add-to-list 'auto-mode-alist '("\\.yaml$" . yaml-mode))
 (add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
 
 (setq visible-bell t
-      whitespace-style '(face trailing lines-tail tabs)
-      whitespace-line-column 80
       diff-switches "-u")
 
 ;; ido/smex
@@ -68,6 +67,12 @@
 
 ;; Disabled commands
 (put 'dired-find-alternate-file 'disabled nil)
+
+;; Whitespace mode
+(require 'whitespace)
+(setq whitespace-line-column 80) ;; limit line length
+(setq whitespace-style '(face tabs empty trailing lines-tail))
+(global-whitespace-mode 1)
 
 ;; language specific settings
 (require 'init-ruby)
