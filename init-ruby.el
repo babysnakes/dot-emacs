@@ -18,12 +18,21 @@
 (add-to-list 'completion-ignored-extensions ".rbc")
 (add-to-list 'completion-ignored-extensions ".rbo")
 
+;; not loaded automatically by the package!!!
+(require 'ruby-tools)
+
+(define-key 'help-command (kbd "R") 'yari)
+(add-hook 'ruby-mode-hook '(lambda ()
+                             (ruby-tools-mode +1)
+                             (subword-mode +1)))
+
+;; add `bundle exec pry` invocaiton to inf-ruby
+(eval-after-load 'inf-ruby
+  `(add-to-list 'inf-ruby-implementations '("bpry" . "bundle exec pry")))
+
 ;; chef mode
 (add-to-list 'load-path (concat custom-vendor-dir "chef-mode"))
 (require 'chef-mode)
 (setq chef-use-rvm nil)
-
-;; not loaded automatically by the package!!!
-(require 'ruby-tools)
 
 (provide 'init-ruby)

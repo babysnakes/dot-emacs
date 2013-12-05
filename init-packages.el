@@ -27,6 +27,7 @@
                       inf-ruby
                       ruby-tools
                       rinari
+                      yari
 
                       ;; js/css/web
                       coffee-mode
