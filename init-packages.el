@@ -28,6 +28,7 @@
                       ruby-tools
                       rinari
                       yari
+                      robe
 
                       ;; js/css/web
                       coffee-mode
