@@ -10,7 +10,6 @@
 
 ;; list of required packages to install on startup if not installed.
 (defvar my-packages '(;; general
-                      better-defaults
                       expand-region
                       helm
                       ido-ubiquitous

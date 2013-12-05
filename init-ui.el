@@ -6,11 +6,32 @@
     (custom-set-faces '(magit-item-highlight ((t nil))))))
 
 (setq inhibit-startup-screen t)
+(show-paren-mode t)
+(setq-default indent-tabs-mode nil)
+(setq visible-bell t
+      x-select-enable-clipboard t
+      x-select-enable-primary t
+      mouse-yank-at-point t)
 
 ;; nice scrolling
 (setq scroll-margin 0
       scroll-conservatively 100000
       scroll-preserve-screen-position 1)
+
+;; by default disable menu-bar, scroll-bar and tool-bar.
+(menu-bar-mode -1)
+(global-set-key (kbd "C-<f10>") 'menu-bar-mode)
+(when (fboundp 'tool-bar-mode)
+  (tool-bar-mode -1))
+(when (fboundp 'scroll-bar-mode)
+  (scroll-bar-mode -1))
+
+;; meaningful names for buffers with the same name
+(require 'uniquify)
+(setq uniquify-buffer-name-style 'forward)
+(setq uniquify-separator "/")
+(setq uniquify-after-kill-buffer-p t)    ; rename after killing uniquified
+(setq uniquify-ignore-buffers-re "^\\*") ; don't muck with special buffers
 
 ;; mode line settings
 (line-number-mode t)
@@ -23,6 +44,10 @@
       '("" invocation-name " - " (:eval (if (buffer-file-name)
                                             (abbreviate-file-name (buffer-file-name))
                                           "%b"))))
+
+;; text resize
+(define-key global-map (kbd "C-+") 'text-scale-increase)
+(define-key global-map (kbd "C--") 'text-scale-decrease)
 
 ;; default theme on gui mode
 (when (window-system) (load-theme 'sanityinc-tomorrow-night))

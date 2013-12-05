@@ -28,6 +28,11 @@
 (require 'window-number) ; doesn't load automatically!!!
 (window-number-mode)
 
+;; remember last edit place in file.
+(require 'saveplace)
+(setq-default save-place t)
+
+
 (eval-after-load "ispell"
   '(when (executable-find ispell-program-name)
      (add-hook 'text-mode-hook 'turn-on-flyspell)))
@@ -50,12 +55,15 @@
 (global-set-key (kbd "C-c h") 'helm-mini)
 (global-set-key (kbd "C-c n") 'my-cleanup-buffer)
 (global-set-key (kbd "C-x m") 'eshell)
-(define-key global-map (kbd "C-+") 'text-scale-increase)
-(define-key global-map (kbd "C--") 'text-scale-decrease)
-(global-set-key (kbd "C-<f10>") 'menu-bar-mode)
+(global-set-key (kbd "M-/") 'hippie-expand)
+(global-set-key (kbd "C-x C-b") 'ibuffer)
 (global-set-key (kbd "C-x C-i") 'imenu)
 (global-set-key (kbd "C-c r") 'revert-buffer)
 (global-set-key (kbd "C-c q") 'join-line)
+(global-set-key (kbd "C-s") 'isearch-forward-regexp)
+(global-set-key (kbd "C-r") 'isearch-backward-regexp)
+(global-set-key (kbd "C-M-s") 'isearch-forward)
+(global-set-key (kbd "C-M-r") 'isearch-backward)
 ;; (global-set-key (kbd "M-%") 'query-replace-regexp)
 ;; (global-set-key (kbd "C-M-%") 'query-replace)
 ;; (global-set-key (kbd "C-M-h") 'backward-kill-word)
@@ -63,8 +71,12 @@
 (add-to-list 'auto-mode-alist '("\\.yaml$" . yaml-mode))
 (add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
 
-(setq visible-bell t
-      diff-switches "-u")
+(setq save-interprogram-paste-before-kill t
+      apropos-do-all t
+      diff-switches "-u"
+      save-place-file (concat user-emacs-directory "places")
+      backup-directory-alist `(("." . ,(concat user-emacs-directory
+                                               "backups"))))
 
 ;; ido/smex
 (require 'ido)
