@@ -93,6 +93,7 @@
      (define-key paredit-mode-map (kbd "M-(") 'paredit-backward-slurp-sexp)))
 
 ;; language specific settings
+(require 'init-clojure)
 (require 'init-ruby)
 (require 'init-coffeescript)
 (require 'init-md)

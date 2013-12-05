@@ -20,6 +20,9 @@
                       ;; clojure
                       clojure-mode
                       clojure-test-mode
+                      cider
+                      clojure-cheatsheet
+                      slamhound
 
                       ;; ruby
                       inf-ruby
