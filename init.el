@@ -28,6 +28,22 @@
 (require 'window-number) ; doesn't load automatically!!!
 (window-number-mode)
 
+(eval-after-load "ispell"
+  '(when (executable-find ispell-program-name)
+     (add-hook 'text-mode-hook 'turn-on-flyspell)))
+;; * also consider using flyspell-prog-mode
+
+(setq hippie-expand-try-functions-list '(try-expand-dabbrev
+                                         try-expand-dabbrev-all-buffers
+                                         try-expand-dabbrev-from-kill
+                                         try-complete-file-name-partially
+                                         try-complete-file-name
+                                         try-expand-all-abbrevs
+                                         try-expand-list
+                                         try-expand-line
+                                         try-complete-lisp-symbol-partially
+                                         try-complete-lisp-symbol))
+
 (define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
 (global-set-key (kbd "C-c =") 'er/expand-region)
 (global-set-key (kbd "C-c g") 'magit-status)
