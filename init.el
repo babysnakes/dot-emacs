@@ -27,6 +27,8 @@
 (yas-global-mode t) ; always load yas
 (require 'window-number) ; doesn't load automatically!!!
 (window-number-mode)
+(add-hook 'text-mode-hook 'turn-on-auto-fill)
+(add-hook 'prog-mode-hook 'my-local-comment-auto-fill)
 
 ;; remember last edit place in file.
 (require 'saveplace)

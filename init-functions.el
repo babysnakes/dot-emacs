@@ -35,4 +35,8 @@
   (my-indent-buffer)
   (whitespace-cleanup))
 
+(defun my-local-comment-auto-fill ()
+  (set (make-local-variable 'comment-auto-fill-only-comments) t)
+  (auto-fill-mode t))
+
 (provide 'init-functions)
