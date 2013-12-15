@@ -31,6 +31,8 @@
                       robe
 
                       ;; js/css/web
+                      js-comint
+                      nodejs-repl
                       coffee-mode
                       less-css-mode
                       markdown-mode
