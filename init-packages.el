@@ -47,6 +47,7 @@
                       magit
                       git-commit-mode
                       projectile
+                      helm-projectile
 
                       ;; editor
                       yasnippet
