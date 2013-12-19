@@ -37,6 +37,7 @@
                       less-css-mode
                       markdown-mode
                       yaml-mode
+                      multi-web-mode
                       zencoding-mode
 
                       ;; style
