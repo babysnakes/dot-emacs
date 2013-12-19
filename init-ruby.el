@@ -24,7 +24,8 @@
 (define-key 'help-command (kbd "R") 'yari)
 (add-hook 'ruby-mode-hook '(lambda ()
                              (ruby-tools-mode +1)
-                             (subword-mode +1)))
+                             (subword-mode +1)
+                             (smartparens-mode +1)))
 (add-hook 'ruby-mode-hook 'robe-mode)
 
 ;; add `bundle exec pry` invocaiton to inf-ruby

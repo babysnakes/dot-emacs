@@ -23,10 +23,10 @@
    (replace-regexp-in-string "\033\\[[0-9]+[A-Z]" "" output)))
 
 ;; JS Mode
-(eval-after-load 'js
-  '(progn
-     (setq js-indent-level 2)
-     (add-hook 'js-mode-hook 'subword-mode)
-     (add-hook 'js-mode-hook 'set-js-comint-shortcuts)))
+(setq js-indent-level 2)
+(add-hook 'js-mode-hook 'subword-mode)
+(add-hook 'js-mode-hook 'set-js-comint-shortcuts)
+(add-hook 'js-mode-hook '(lambda ()
+                           (smartparens-mode +1)))
 
 (provide 'init-javascript)

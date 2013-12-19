@@ -123,6 +123,7 @@
      (define-key paredit-mode-map (kbd "M-(") 'paredit-backward-slurp-sexp)))
 
 ;; language specific settings
+(require 'init-smartparens)
 (require 'init-lisp)
 (require 'init-clojure)
 (require 'init-ruby)

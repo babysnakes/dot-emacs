@@ -53,6 +53,7 @@
                       yasnippet
                       ace-jump-mode
                       paredit
+                      smartparens
                       window-number))
 
 (dolist (p my-packages)
