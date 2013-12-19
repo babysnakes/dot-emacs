@@ -10,8 +10,10 @@
                  'js-send-buffer)
   (local-set-key "\C-c\C-b"
                  'js-send-buffer-and-go)
-  (local-set-key "\C-cl"
-                 'js-load-file-and-go))
+  (local-set-key (kbd "C-, r")
+                 'js-send-region)
+  (local-set-key (kbd "C-, C-r")
+                 'js-send-region-and-go))
 
 (setq inferior-js-program-command "node")
 (ansi-color-for-comint-mode-on)
