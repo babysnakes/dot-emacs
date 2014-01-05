@@ -27,6 +27,7 @@
 (add-hook 'js-mode-hook 'subword-mode)
 (add-hook 'js-mode-hook 'set-js-comint-shortcuts)
 (add-hook 'js-mode-hook '(lambda ()
-                           (smartparens-mode +1)))
+                           (smartparens-mode +1)
+                           (hs-minor-mode +1)))
 
 (provide 'init-javascript)
