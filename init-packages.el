@@ -55,7 +55,8 @@
                       ace-jump-mode
                       paredit
                       smartparens
-                      window-number))
+                      window-number
+                      ack-and-a-half))
 
 (dolist (p my-packages)
   (when (not (package-installed-p p))
