@@ -27,6 +27,7 @@
                              (subword-mode +1)
                              (smartparens-mode +1)))
 (add-hook 'ruby-mode-hook 'robe-mode)
+(add-hook 'projectile-mode-hook 'projectile-rails-on)
 
 ;; add `bundle exec pry` invocaiton to inf-ruby
 (eval-after-load 'inf-ruby

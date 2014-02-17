@@ -26,7 +26,7 @@
                       ;; ruby
                       inf-ruby
                       ruby-tools
-                      rinari
+                      projectile-rails
                       yari
                       robe
 
