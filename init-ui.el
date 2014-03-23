@@ -45,6 +45,16 @@
                                             (abbreviate-file-name (buffer-file-name))
                                           "%b"))))
 
+;; set custom title
+(defun custom-title (s)
+  "Add a string to the title (inside parenthesis after invocation name)"
+  (interactive "sEnter short description: ")
+  (setq frame-title-format
+        `("" invocation-name " (" ,s ") - "
+          (:eval (if (buffer-file-name)
+                     (abbreviate-file-name (buffer-file-name))
+                   "%b")))))
+
 ;; text resize
 (define-key global-map (kbd "C-+") 'text-scale-increase)
 (define-key global-map (kbd "C--") 'text-scale-decrease)
