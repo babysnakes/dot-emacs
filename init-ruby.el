@@ -31,7 +31,7 @@
 
 ;; add `bundle exec pry` invocaiton to inf-ruby
 (eval-after-load 'inf-ruby
-  `(add-to-list 'inf-ruby-implementations '("bpry" . "bundle exec pry")))
+  `(add-to-list 'inf-ruby-implementations '("bconsole" . "bundle console")))
 
 ;; chef mode
 (add-to-list 'load-path (concat custom-vendor-dir "chef-mode"))
