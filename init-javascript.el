@@ -28,6 +28,7 @@
 (add-hook 'js-mode-hook 'set-js-comint-shortcuts)
 (add-hook 'js-mode-hook '(lambda ()
                            (smartparens-mode +1)
-                           (hs-minor-mode +1)))
+                           (hs-minor-mode +1)
+                           (tern-mode t)))
 
 (provide 'init-javascript)

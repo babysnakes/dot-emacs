@@ -32,6 +32,7 @@
 
                       ;; js/css/web
                       js-comint
+                      tern
                       nodejs-repl
                       coffee-mode
                       less-css-mode
