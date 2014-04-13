@@ -137,3 +137,4 @@
 (require 'init-coffeescript)
 (require 'init-web)
 (require 'init-md)
+(require 'init-erlang)

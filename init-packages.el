@@ -41,6 +41,12 @@
                       multi-web-mode
                       zencoding-mode
 
+                      ;; Erlang
+                      erlang
+                      elixir-mode
+                      elixir-mix
+                      elixir-yasnippets
+
                       ;; style
                       color-theme-sanityinc-tomorrow
                       color-theme-sanityinc-solarized
