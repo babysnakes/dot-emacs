@@ -18,8 +18,8 @@
 
                       ;; clojure
                       clojure-mode
-                      clojure-test-mode
                       cider
+                      cider-browse-ns
                       clojure-cheatsheet
                       slamhound
 
