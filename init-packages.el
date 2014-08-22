@@ -15,6 +15,7 @@
                       ido-ubiquitous
                       flx-ido
                       smex
+                      company
 
                       ;; clojure
                       clojure-mode
