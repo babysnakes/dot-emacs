@@ -9,3 +9,4 @@
 /savefile/
 /eshell/
 /bookmarks
+*.elc
