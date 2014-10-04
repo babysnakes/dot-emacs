@@ -17,6 +17,11 @@
   (progn (load-theme 'sanityinc-tomorrow-day)
          (custom-title "Scripts")))
 
+(defun set-environment-riskx ()
+  (interactive)
+  (progn (load-theme 'sanityinc-tomorrow-day)
+         (custom-title "Riskx")))
+
 (defun set-environment-chef ()
   (interactive)
   (progn (load-theme 'sanityinc-tomorrow-night)
