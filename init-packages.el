@@ -30,6 +30,8 @@
                       projectile-rails
                       yari
                       robe
+                      rspec-mode
+                      chruby
 
                       ;; js/css/web
                       js-comint

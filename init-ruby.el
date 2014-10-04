@@ -1,6 +1,7 @@
 ;; Ruby settings
 
 (setq ruby-deep-indent-paren nil)
+(setq rspec-use-rake-when-possible nil)
 
 ;; ruby files
 (add-to-list 'auto-mode-alist '("\\.rake$" . ruby-mode))
@@ -20,6 +21,7 @@
 
 ;; not loaded automatically by the package!!!
 (require 'ruby-tools)
+;;(require 'chruby)
 
 (define-key 'help-command (kbd "R") 'yari)
 (add-hook 'ruby-mode-hook '(lambda ()
