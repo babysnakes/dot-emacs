@@ -7,7 +7,7 @@
       (concat (expand-file-name user-emacs-directory) "custom.el"))
 (and (file-exists-p custom-file) (load custom-file))
 
-(add-to-list 'load-path user-emacs-directory)
+(add-to-list 'load-path (concat user-emacs-directory "lisp"))
 (setq custom-vendor-dir
       (concat (expand-file-name user-emacs-directory) "vendor/"))
 
