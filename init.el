@@ -143,3 +143,4 @@
 (require 'init-md)
 (require 'init-erlang)
 (require 'init-environments)
+(put 'narrow-to-region 'disabled nil)
