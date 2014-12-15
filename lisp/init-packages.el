@@ -17,10 +17,12 @@
                       smex
                       company
 
+                      ;; devops
+                      dockerfile-mode
+
                       ;; clojure
                       clojure-mode
                       cider
-                      cider-browse-ns
                       clojure-cheatsheet
                       slamhound
 
@@ -43,6 +45,7 @@
                       yaml-mode
                       multi-web-mode
                       zencoding-mode
+                      restclient
 
                       ;; Erlang
                       erlang
