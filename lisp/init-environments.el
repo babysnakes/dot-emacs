@@ -32,4 +32,15 @@
   (progn (load-theme 'sanityinc-tomorrow-bright)
          (custom-title "Classifiers")))
 
+(defun set-environment-pmml-scorer ()
+  (interactive)
+  (progn (load-theme 'sanityinc-tomorrow-bright)
+         (setq whitespace-line-column 100)
+         (custom-title "pmml-scorer")))
+
+(defun set-environment-main ()
+  (interactive)
+  (progn (load-theme 'sanityinc-tomorrow-night)
+         (custom-title "main")))
+
 (provide 'init-environments)
