@@ -60,7 +60,7 @@
 
                       ;; project management
                       magit
-                      git-commit-mode
+                      git-commit
                       projectile
                       helm-projectile
 
