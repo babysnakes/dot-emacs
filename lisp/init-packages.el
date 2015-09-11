@@ -47,6 +47,7 @@
                       multi-web-mode
                       zencoding-mode
                       restclient
+                      web-beautify
 
                       ;; Erlang
                       erlang
