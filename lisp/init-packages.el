@@ -24,6 +24,7 @@
                       clojure-mode
                       cider
                       clojure-cheatsheet
+                      clj-refactor
                       slamhound
 
                       ;; ruby
