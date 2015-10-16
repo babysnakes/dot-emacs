@@ -25,8 +25,6 @@
 (defalias 'yes-or-no-p 'y-or-n-p)
 (projectile-global-mode)
 (yas-global-mode t) ; always load yas
-(require 'window-number) ; doesn't load automatically!!!
-(window-number-mode)
 (add-hook 'text-mode-hook 'turn-on-auto-fill)
 (add-hook 'prog-mode-hook 'my-local-comment-auto-fill)
 
@@ -137,10 +135,8 @@
 (require 'init-lisp)
 (require 'init-clojure)
 (require 'init-ruby)
-(require 'init-javascript)
 (require 'init-coffeescript)
 (require 'init-web)
 (require 'init-md)
-(require 'init-erlang)
 (require 'init-environments)
 (put 'narrow-to-region 'disabled nil)

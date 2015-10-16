@@ -7,6 +7,5 @@
         (css-mode "<style[^>]*>" "</style>")
         (ruby-mode "<%[^ ]?" "[^ ]?%>")))
 (setq mweb-filename-extensions '("htm" "html" "erb"))
-(multi-web-global-mode 1)
 
 (provide 'init-web)

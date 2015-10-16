@@ -23,21 +23,14 @@
 (require 'ruby-tools)
 ;;(require 'chruby)
 
-(define-key 'help-command (kbd "R") 'yari)
 (add-hook 'ruby-mode-hook '(lambda ()
                              (ruby-tools-mode +1)
                              (subword-mode +1)
                              (smartparens-mode +1)))
-(add-hook 'ruby-mode-hook 'robe-mode)
 (add-hook 'projectile-mode-hook 'projectile-rails-on)
 
 ;; add `bundle exec pry` invocaiton to inf-ruby
 (eval-after-load 'inf-ruby
   `(add-to-list 'inf-ruby-implementations '("bconsole" . "bundle console")))
-
-;; chef mode
-(add-to-list 'load-path (concat custom-vendor-dir "chef-mode"))
-(require 'chef-mode)
-(setq chef-use-rvm nil)
 
 (provide 'init-ruby)

@@ -1,3 +1,0 @@
-[submodule "vendor/chef-mode"]
-	path = vendor/chef-mode
-	url = git@github.com:babysnakes/chef-mode.git

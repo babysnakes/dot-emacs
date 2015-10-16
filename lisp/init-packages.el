@@ -2,7 +2,7 @@
 
 (require 'package)
 (add-to-list 'package-archives
-             '("melpa" . "http://melpa.org/packages/") t)
+             '("melpa-stable" . "http://stable.melpa.org/packages/") t)
 (package-initialize)
 
 (when (not package-archive-contents)
@@ -13,12 +13,8 @@
                       expand-region
                       helm
                       ido-ubiquitous
-                      flx-ido
                       smex
                       company
-
-                      ;; devops
-                      dockerfile-mode
 
                       ;; clojure
                       clojure-mode
@@ -31,31 +27,12 @@
                       inf-ruby
                       ruby-tools
                       projectile-rails
-                      yari
-                      robe
-                      rspec-mode
-                      chruby
 
-                      ;; js/css/web
-                      js-comint
-                      tern
-                      nodejs-repl
-                      coffee-mode
-                      less-css-mode
+                      ;; Various modes
                       markdown-mode
                       yaml-mode
-                      multi-web-mode
-                      zencoding-mode
-                      restclient
-                      web-beautify
 
-                      ;; Erlang
-                      erlang
-                      elixir-mode
-                      elixir-mix
-                      elixir-yasnippets
-
-                      ;; style
+                     ;; style
                       color-theme-sanityinc-tomorrow
                       color-theme-sanityinc-solarized
 
@@ -70,8 +47,7 @@
                       ace-jump-mode
                       paredit
                       smartparens
-                      window-number
-                      ack-and-a-half))
+                      window-numbering))
 
 (dolist (p my-packages)
   (when (not (package-installed-p p))
