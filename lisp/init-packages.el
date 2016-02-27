@@ -28,6 +28,10 @@
                       ruby-tools
                       projectile-rails
 
+                      ;; elixir
+                      alchemist
+                      elixir-yasnippets
+
                       ;; Various modes
                       markdown-mode
                       yaml-mode

@@ -116,6 +116,9 @@
 (setq whitespace-line-column 80) ;; limit line length
 (setq whitespace-style '(face tabs empty trailing lines-tail))
 (global-whitespace-mode 1)
+;; company-mode completion
+(add-hook 'after-init-hook 'global-company-mode)
+(global-set-key (kbd "C-S-SPC") 'company-complete)
 
 ;; Paredit
 (eval-after-load 'paredit
