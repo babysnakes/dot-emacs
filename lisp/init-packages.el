@@ -15,6 +15,7 @@
                       ido-ubiquitous
                       smex
                       company
+                      neotree
 
                       ;; clojure
                       clojure-mode
@@ -32,11 +33,14 @@
                       alchemist
                       elixir-yasnippets
 
+                      ;; elm
+                      elm-mode
+
                       ;; Various modes
                       markdown-mode
                       yaml-mode
 
-                     ;; style
+                      ;; style
                       color-theme-sanityinc-tomorrow
                       color-theme-sanityinc-solarized
 
