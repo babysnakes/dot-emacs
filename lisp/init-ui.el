@@ -3,6 +3,12 @@
 ;; Avoid annoying square in gui
 (setq ring-bell-function 'ignore)
 
+;; in gui set larger fonts and larger default size
+(when window-system
+  (set-frame-font "Menlo-14")
+  (add-to-list 'default-frame-alist '(height . 49))
+  (add-to-list 'default-frame-alist '(width . 124)))
+
 ;; some ui related key gindings
 (define-key global-map (kbd "C-|") 'toggle-windows-split)
 
