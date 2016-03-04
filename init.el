@@ -111,6 +111,9 @@
 ;; Disabled commands
 (put 'dired-find-alternate-file 'disabled nil)
 
+;; shortcuts
+(global-set-key (kbd "C-, t") 'neotree-toggle)
+
 ;; Whitespace mode
 (require 'whitespace)
 (setq whitespace-line-column 80) ;; limit line length
