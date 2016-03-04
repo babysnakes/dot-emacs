@@ -7,9 +7,9 @@
 (define-key global-map (kbd "C-|") 'toggle-windows-split)
 
 ;; magit highlighting in terminal hides the changes :(
-(eval-after-load 'magit
-  (when (not window-system)
-    (custom-set-faces '(magit-item-highlight ((t nil))))))
+;; (eval-after-load 'magit
+;;   (when (not window-system)
+;;     (custom-set-faces '(magit-item-highlight ((t nil))))))
 
 (setq inhibit-startup-screen t)
 (show-paren-mode t)
