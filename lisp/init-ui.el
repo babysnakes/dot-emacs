@@ -1,5 +1,8 @@
 ;; UI stuff
 
+;; Avoid annoying square in gui
+(setq ring-bell-function 'ignore)
+
 ;; some ui related key gindings
 (define-key global-map (kbd "C-|") 'toggle-windows-split)
 
