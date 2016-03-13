@@ -29,7 +29,8 @@
                       ruby-tools
                       projectile-rails
 
-                      ;; elixir
+                      ;; erlang+elixir
+                      erlang
                       alchemist
                       elixir-yasnippets
 

@@ -140,6 +140,7 @@
 (require 'init-smartparens)
 (require 'init-lisp)
 (require 'init-clojure)
+(require 'init-erlang)
 (require 'init-ruby)
 (require 'init-coffeescript)
 (require 'init-web)
