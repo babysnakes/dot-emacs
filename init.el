@@ -143,6 +143,7 @@
 (require 'init-erlang)
 (require 'init-ruby)
 (require 'init-coffeescript)
+(require 'init-javascript)
 (require 'init-web)
 (require 'init-md)
 (require 'init-environments)
