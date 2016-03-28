@@ -46,6 +46,7 @@
                       ;; Various modes
                       markdown-mode
                       yaml-mode
+                      dockerfile-mode
 
                       ;; style
                       color-theme-sanityinc-tomorrow
