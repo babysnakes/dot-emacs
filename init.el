@@ -142,7 +142,6 @@
 (require 'init-clojure)
 (require 'init-erlang)
 (require 'init-ruby)
-(require 'init-coffeescript)
 (require 'init-javascript)
 (require 'init-web)
 (require 'init-md)

@@ -34,6 +34,12 @@
                       alchemist
                       elixir-yasnippets
 
+                      ;; javascript
+                      web-beautify
+                      json-mode
+                      js2-mode
+                      tern
+
                       ;; elm
                       elm-mode
 
