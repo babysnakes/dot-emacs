@@ -66,6 +66,14 @@
                      (abbreviate-file-name (buffer-file-name))
                    "%b")))))
 
+(defun set-custom-title ()
+  "Add a custom title according to the daemon name"
+  (interactive)
+  (when (boundp 'server-name)
+    (if (equal server-name "server")
+        (custom-title "main")
+      (custom-title server-name))))
+
 ;; text resize
 (define-key global-map (kbd "C-+") 'text-scale-increase)
 (define-key global-map (kbd "C--") 'text-scale-decrease)
