@@ -47,6 +47,7 @@
                       markdown-mode
                       yaml-mode
                       dockerfile-mode
+                      systemd
 
                       ;; style
                       color-theme-sanityinc-tomorrow
