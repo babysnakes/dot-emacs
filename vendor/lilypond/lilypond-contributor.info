@@ -1,0 +1,328 @@
+This is lilypond-contributor.info, produced by makeinfo version 6.0 from
+contributor.texi.
+
+Copyright © 2007–2015 by the authors.
+
+     Permission is granted to copy, distribute and/or modify this
+     document under the terms of the GNU Free Documentation License,
+     Version 1.1 or any later version published by the Free Software
+     Foundation; with no Invariant Sections.  A copy of the license is
+     included in the section entitled “GNU Free Documentation License”.
+
+
+Indirect:
+lilypond-contributor.info-1: 486
+lilypond-contributor.info-2: 301205
+lilypond-contributor.info-3: 926517
+
+Tag Table:
+(Indirect)
+Node: Top486
+Node: Introduction to contributing1674
+Node: Help us2029
+Node: Overview of work flow4867
+Node: Summary for experienced developers7610
+Node: Mentors12411
+Node: Quick start16612
+Node: LilyDev17078
+Node: Installing LilyDev in VirtualBox19127
+Node: Configuring LilyDev in VirtualBox22868
+Node: lily-git25566
+Node: Where to get lily-git26017
+Node: Using lily-git to download the source code26892
+Node: How to use lily-git28712
+Node: git-cl32977
+Node: Installing git-cl33392
+Node: Updating git-cl34311
+Node: Configuring git-cl34850
+Node: Compiling with LilyDev39047
+Node: Now start work!41317
+Node: Working with source code42042
+Node: Manually installing lily-git.tcl42675
+Node: Starting with Git44584
+Node: Setting up45179
+Node: Installing Git45584
+Node: Initializing a repository46182
+Node: Configuring Git46884
+Node: Git for the impatient49919
+Node: Other repositories58307
+Node: lilypond-extra58649
+Node: Grand Unified Builder (GUB)59899
+Node: LilyPad60558
+Node: yet more repositories62297
+Node: Downloading remote branches62556
+Node: Organization of remote branches62969
+Node: LilyPond repository sources64207
+Node: Downloading individual branches64987
+Node: Downloading all remote branches68077
+Node: Other branches68449
+Node: Basic Git procedures69092
+Node: The Git contributor's cycle69472
+Node: Pulling and rebasing70051
+Node: Using local branches73973
+Node: Creating and removing branches74289
+Node: Listing branches and remotes74910
+Node: Checking out branches75415
+Node: Merging branches76297
+Node: Commits77002
+Node: Understanding commits77235
+Node: How to make a commit78192
+Node: Commit messages79790
+Node: Patches81874
+Node: How to make a patch82089
+Node: Emailing patches83591
+Node: Uploading a patch for review84635
+Node: The patch review cycle88529
+Node: Advanced Git procedures92958
+Node: Merge conflicts93955
+Node: Advanced Git concepts94243
+Node: Resolving conflicts97544
+Node: Reverting all local changes98351
+Node: Working with remote branches98876
+Node: Git log101485
+Node: Applying remote patches102242
+Node: Cleaning up multiple patches103496
+Node: Commit access104125
+Node: Pushing to staging113022
+Node: Git on Windows116047
+Node: Repository directory structure129063
+Node: Other Git documentation133115
+Node: Compiling133606
+Node: Overview of compiling134074
+Node: Requirements135288
+Node: Requirements for running LilyPond135589
+Node: Requirements for compiling LilyPond137081
+Node: Fedora137857
+Node: Linux Mint140268
+Node: OpenSUSE142321
+Node: Ubuntu144070
+Node: Other145729
+Node: Requirements for building documentation148589
+Node: Getting the source code151037
+Node: Configuring make152789
+Node: Running ./autogen.sh153035
+Node: Running ../configure153866
+Node: Configuration options154148
+Node: Checking build dependencies154593
+Node: Configuring target directories155820
+Node: Compiling LilyPond157527
+Node: Using make157833
+Node: Saving time with the -j option158525
+Node: Compiling for multiple platforms159328
+Node: Useful make variables160423
+Node: Post-compilation options160793
+Node: Installing LilyPond from a local build161090
+Node: Generating documentation162126
+Node: Documentation editor's edit/compile cycle162602
+Node: Building documentation163916
+Node: Building a single document166434
+Node: Saving time with CPU_COUNT167090
+Node: AJAX search168405
+Node: Installing documentation168965
+Node: Building documentation without compiling170776
+Node: Testing LilyPond binary172458
+Node: Problems173046
+Node: Concurrent stable and development versions176800
+Node: Build system178369
+Node: Documentation work179202
+Node: Introduction to documentation work180097
+Node: version in documentation files182344
+Node: Documentation suggestions183387
+Node: Texinfo introduction and usage policy186970
+Node: Texinfo introduction187393
+Node: Documentation files188199
+Node: Sectioning commands189446
+Node: LilyPond formatting192190
+Node: Text formatting197774
+Node: Syntax survey198937
+Node: Comments199276
+Node: Cross references199636
+Node: External links200737
+Node: Fixed-width font201161
+Node: Indexing206883
+Node: Lists207186
+Node: Special characters208183
+Node: Miscellany209756
+Node: Other text concerns211414
+Node: Documentation policy212763
+Node: Books213102
+Node: Section organization216533
+Node: Checking cross-references219236
+Node: General writing220054
+Node: Technical writing style221754
+Node: Tips for writing docs222790
+Node: Scripts to ease doc work225659
+Node: Scripts to test the documentation225954
+Node: Building only one section of the documentation226244
+Node: Scripts to create documentation228292
+Node: Stripping whitespace and generating menus228636
+Node: Stripping whitespace only229345
+Node: Updating doc with convert-ly229700
+Node: Docstrings in scheme230061
+Node: Translating the documentation230590
+Node: Getting started with documentation translation231867
+Node: Translation requirements232374
+Node: Which documentation can be translated233268
+Node: Starting translation in a new language234169
+Node: Documentation translation details235045
+Node: Files to be translated235578
+Node: Translating the Web site and other Texinfo documentation239250
+Node: Adding a Texinfo manual246113
+Node: Documentation translation maintenance246861
+Node: Check state of translation247933
+Node: Updating documentation translation250034
+Node: Updating translation committishes253173
+Node: Translations management policies254596
+Node: Maintaining without updating translations255128
+Node: Managing documentation translation with Git262310
+Node: Technical background264445
+Node: Website work266296
+Node: Introduction to website work266574
+Node: Uploading and security267864
+Node: Debugging website and docs locally274597
+Node: Translating the website276534
+Node: LSR work278136
+Node: Introduction to LSR278462
+Node: Adding and editing snippets278892
+Node: Approving snippets281979
+Node: LSR to Git283353
+Node: Fixing snippets in LilyPond sources287833
+Node: Renaming a snippet290080
+Node: Updating the LSR to a new version290954
+Node: Issues296462
+Node: Introduction to issues296834
+Node: The Bug Squad297394
+Node: Bug Squad setup298721
+Node: Bug Squad checklists301205
+Node: Issue classification308704
+Node: Adding issues to the tracker314968
+Node: Patch handling317501
+Node: Summary of project status317897
+Node: Regression tests319438
+Node: Introduction to regression tests319878
+Node: Precompiled regression tests321453
+Node: Compiling regression tests325220
+Node: Regtest comparison327094
+Node: Pixel-based regtest comparison330150
+Node: Finding the cause of a regression332076
+Node: Memory and coverage tests335185
+Node: MusicXML tests336148
+Node: Grand Regression Test Checking336872
+Node: Programming work338393
+Node: Overview of LilyPond architecture339008
+Node: LilyPond programming languages341505
+Node: Programming without compiling344608
+Node: Finding functions347037
+Node: Code style349459
+Node: Languages349860
+Node: Filenames350045
+Node: Indentation350961
+Node: Naming conventions354573
+Node: Broken code355597
+Node: Code comments356145
+Node: Handling errors356881
+Node: Localization357509
+Node: Warnings Errors Progress and Debug Output362688
+Node: Debugging LilyPond368911
+Node: Debugging overview369527
+Node: Debugging C++ code370133
+Node: Debugging Scheme code373205
+Node: Tracing object relationships378146
+Node: Adding or modifying features381160
+Node: Write the code381918
+Node: Write regression tests382369
+Node: Write convert-ly rule383378
+Node: Automatically update documentation384420
+Node: Manually update documentation385180
+Node: Edit changes.tely387659
+Node: Verify successful build388288
+Node: Verify regression tests388851
+Node: Post patch for comments391067
+Node: Push patch391326
+Node: Closing the issues391718
+Node: Iterator tutorial392517
+Node: Engraver tutorial393022
+Node: Useful methods for information processing393973
+Node: Translation process395053
+Node: Preventing garbage collection for SCM member variables396107
+Node: Listening to music events396821
+Node: Acknowledging grobs397712
+Node: Engraver declaration/documentation399341
+Node: Callback tutorial400858
+Node: Understanding pure properties401125
+Node: Purity in LilyPond401968
+Node: Writing a pure function405741
+Node: How purity is defined and stored406770
+Node: Where purity is used407835
+Node: Case studies409127
+Node: Debugging tips411814
+Node: LilyPond scoping412603
+Node: Scheme->C interface413871
+Node: Comparison414539
+Node: Conversion417714
+Node: LilyPond miscellany418479
+Node: Spacing algorithms418977
+Node: Info from Han-Wen email420960
+Node: Music functions and GUILE debugging432370
+Node: Articulations on EventChord435189
+Node: Release work436680
+Node: Development phases436973
+Node: Minor release checklist438608
+Node: Major release checklist443536
+Node: Release extra notes447830
+Node: Notes on builds with GUB449829
+Node: Build system notes455217
+Node: Build system overview455690
+Node: Tips for working on the build system457053
+Node: General build system notes458071
+Node: How stepmake works458327
+Node: Doc build467975
+Node: The function of make doc468208
+Node: Building a bibliography484834
+Node: Website build487596
+Node: Modifying the feta font501906
+Node: Overview of the feta font502274
+Node: Font creation tools503251
+Node: Adding a new font section503861
+Node: Adding a new glyph504842
+Node: Building the changed font505709
+Node: METAFONT formatting rules506109
+Node: Administrative policies506994
+Node: Meta-policy for this document507559
+Node: Environment variables508678
+Node: Meisters509785
+Node: Managing Staging and Master branches with Patchy512561
+Node: Overview of Patchy513019
+Node: Patchy requirements513938
+Node: Installing Patchy514673
+Node: Configuring Patchy515379
+Node: Running the script517530
+Node: Automating Patchy519440
+Node: Troubleshooting Patchy520562
+Node: Administrative mailing list522808
+Node: Grand Organization Project (GOP)523624
+Node: Motivation524318
+Node: Ongoing jobs527225
+Node: Policy decisions530239
+Node: Policy decisions (finished)536140
+Node: GOP-PROP 1 - python formatting536773
+Node: GOP-PROP 2 - mentors and frogs537919
+Node: GOP-PROP 3 - C++ formatting538623
+Node: GOP-PROP 4 - lessons from 2.14541697
+Node: GOP-PROP 5 - build system output (not accepted)545896
+Node: GOP-PROP 6 - private mailing lists546862
+Node: GOP-PROP 7 - developers as resources549716
+Node: GOP-PROP 8 - issue priorities550543
+Node: GOP-PROP 9 - behavior of make doc554046
+Node: Grand LilyPond Input Syntax Standardization (GLISS)558750
+Node: Specific GLISS issues564187
+Node: Unsorted policies569440
+Node: LilyPond grammar570877
+Node: GNU Free Documentation License926517
+
+End Tag Table
+
+
+Local Variables:
+coding: utf-8
+End:

@@ -146,4 +146,5 @@
 (require 'init-web)
 (require 'init-md)
 (require 'init-environments)
+(require 'init-lilypond)
 (put 'narrow-to-region 'disabled nil)

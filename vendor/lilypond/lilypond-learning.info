@@ -1,0 +1,202 @@
+This is lilypond-learning.info, produced by makeinfo version 6.0 from
+learning.texi.
+
+Copyright © 1998–2015 by the authors.
+
+     Permission is granted to copy, distribute and/or modify this
+     document under the terms of the GNU Free Documentation License,
+     Version 1.1 or any later version published by the Free Software
+     Foundation; with no Invariant Sections.  A copy of the license is
+     included in the section entitled “GNU Free Documentation License”.
+
+
+Indirect:
+lilypond-learning.info-1: 480
+lilypond-learning.info-2: 301312
+
+Tag Table:
+(Indirect)
+Node: Top480
+Node: Tutorial1402
+Node: Compiling a file1699
+Node: Entering input2041
+Node: Producing output3280
+Node: MacOS X4259
+Node: Windows6408
+Node: Command-line9098
+Node: How to write input files10316
+Node: Simple notation10662
+Node: Pitches11300
+Node: Durations (rhythms)15063
+Node: Rests16237
+Node: Time signature16606
+Node: Tempo marks17053
+Node: Clef17630
+Node: All together18064
+Node: Working on input files18706
+Node: Dealing with errors22721
+Node: General troubleshooting tips23123
+Node: Some common errors23657
+Node: How to read the manuals24014
+Node: Omitted material24405
+Node: Clickable examples25186
+Node: Overview of manuals26046
+Node: Common notation27294
+Node: Single staff notation27675
+Node: Bar lines and bar checks28122
+Node: Bar lines28352
+Node: Bar checks28914
+Node: Pitches and key signatures30073
+Node: Pitch alterations30540
+Node: Key signatures31512
+Node: Warning key signatures and pitches32113
+Node: Ties and slurs34522
+Node: Ties34793
+Node: Slurs35728
+Node: Phrasing slurs36143
+Node: Warnings slurs vs. ties36628
+Node: Articulation and dynamics37437
+Node: Articulations37695
+Node: Fingerings38113
+Node: Dynamics38952
+Node: Adding text39873
+Node: Automatic and manual beams40527
+Node: Advanced rhythmic commands41759
+Node: Partial measure42014
+Node: Tuplets42514
+Node: Grace notes43270
+Node: Multiple notes at once44056
+Node: Music expressions explained44705
+Node: Analogy mathematical expressions45729
+Node: Simultaneous music expressions multiple staves46687
+Node: Simultaneous music expressions single staff48115
+Node: Multiple staves48875
+Node: Staff groups50917
+Node: Combining notes into chords52229
+Node: Single staff polyphony53627
+Node: Songs54185
+Node: Setting simple songs54485
+Node: Aligning lyrics to a melody55493
+Node: Lyrics to multiple staves60217
+Node: Final touches61406
+Node: Organizing pieces with variables61808
+Node: Adding titles63877
+Node: Absolute note names64632
+Node: After the tutorial67436
+Node: Fundamental concepts69066
+Node: How LilyPond input files work69569
+Node: Introduction to the LilyPond file structure70353
+Node: Score is a (single) compound musical expression75956
+Node: Nesting music expressions81142
+Node: On the un-nestedness of brackets and ties83146
+Node: Voices contain music86050
+Node: I'm hearing Voices86528
+Node: Explicitly instantiating voices97595
+Node: Voices and vocals104269
+Node: Contexts and engravers109263
+Node: Contexts explained109803
+Node: Creating contexts112999
+Node: Engravers explained117499
+Node: Modifying context properties120550
+Node: Adding and removing engravers130812
+Node: Extending the templates135125
+Node: Soprano and cello135774
+Node: Four-part SATB vocal score140204
+Node: Building a score from scratch147721
+Node: Saving typing with variables and functions157287
+Node: Scores and parts160506
+Node: Tweaking output163316
+Node: Tweaking basics163784
+Node: Introduction to tweaks164076
+Node: Objects and interfaces165194
+Node: Naming conventions of objects and properties168617
+Node: Tweaking methods170412
+Node: The override command170746
+Node: The revert command173356
+Node: The once prefix174415
+Node: The overrideProperty command175640
+Node: The tweak command176060
+Node: The single prefix180835
+Node: The Internals Reference manual182703
+Node: Properties of layout objects183023
+Node: Properties found in interfaces192394
+Node: Types of properties196194
+Node: Appearance of objects199270
+Node: Visibility and color of objects199729
+Node: The stencil property201729
+Node: The break-visibility property204298
+Node: The transparent property205563
+Node: The color property207817
+Node: Size of objects212201
+Node: Length and thickness of objects218712
+Node: Placement of objects221699
+Node: Automatic behavior221972
+Node: Within-staff objects224810
+Node: The direction property226045
+Node: Fingering229123
+Node: Outside-staff objects233716
+Node: The outside-staff-priority property234172
+Node: The textLengthOn command241503
+Node: Dynamics placement243476
+Node: Grob sizing245060
+Node: Vertical spacing247034
+Node: Collisions of objects252694
+Node: Moving objects252965
+Node: Fixing overlapping notation264564
+Node: The padding property265131
+Node: The right-padding property266390
+Node: The staff-padding property267960
+Node: The self-alignment-X property268820
+Node: The staff-position property269415
+Node: The extra-offset property270845
+Node: The positions property271462
+Node: The force-hshift property274324
+Node: Real music example276107
+Node: Further tweaking287788
+Node: Other uses for tweaks288101
+Node: Tying notes across voices288363
+Node: Simulating a fermata in MIDI289238
+Node: Using variables for layout adjustments291521
+Node: Style sheets294821
+Node: Other sources of information301312
+Node: Advanced tweaks with Scheme305728
+Node: Templates307857
+Node: Built-in templates308400
+Node: SATB template309271
+Node: SSAATTBB template315456
+Node: Single staff templates320658
+Node: Notes only320938
+Node: Notes and lyrics321338
+Node: Notes and chords321951
+Node: Notes lyrics and chords322631
+Node: Piano templates323365
+Node: Solo piano323626
+Node: Piano and melody with lyrics324272
+Node: Piano centered lyrics325276
+Node: String quartet templates326206
+Node: String quartet326458
+Node: String quartet parts327591
+Node: Vocal ensembles templates330029
+Node: SATB vocal score330674
+Node: SATB vocal score and automatic piano reduction332909
+Node: SATB with aligned contexts335624
+Node: SATB on four staves337639
+Node: Solo verse and two-part refrain339227
+Node: Hymn tunes341030
+Node: Psalms343703
+Node: Orchestral templates346701
+Node: Orchestra choir and piano346938
+Node: Ancient notation templates352073
+Node: Transcription of mensural music352355
+Node: Gregorian transcription template357143
+Node: Other templates358188
+Node: Jazz combo358361
+Node: GNU Free Documentation License363755
+Node: LilyPond index389122
+
+End Tag Table
+
+
+Local Variables:
+coding: utf-8
+End:
