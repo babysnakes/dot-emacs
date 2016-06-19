@@ -40,7 +40,8 @@
                       js2-mode
                       tern
 
-                      ;; elm
+                      ;; haskell and friends
+                      haskell-mode
                       elm-mode
 
                       ;; Various modes
