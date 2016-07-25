@@ -49,12 +49,19 @@
 (column-number-mode t)
 (size-indication-mode t)
 
-;; more useful frame title, that show either a file or a
-;; buffer name (if the buffer isn't visiting a file)
-(setq frame-title-format
-      '("" invocation-name " - " (:eval (if (buffer-file-name)
-                                            (abbreviate-file-name (buffer-file-name))
-                                          "%b"))))
+;; more useful default frame title. Include project if available.
+(defun project-title ()
+  "Name the frame according to the projectile project (or main)"
+  (setq frame-title-format
+        `("" invocation-name " ("
+          (:eval (if (projectile-project-p)
+                     (file-name-base (substring (projectile-project-p) 0 -1))
+                   "main"))
+          ") - "
+          (:eval (if (buffer-file-name)
+                     (abbreviate-file-name (buffer-file-name))
+                   "%b")))))
+(project-title)
 
 ;; set custom title
 (defun custom-title (s)
