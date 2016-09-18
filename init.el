@@ -63,6 +63,7 @@
 (global-set-key (kbd "C-r") 'isearch-backward-regexp)
 (global-set-key (kbd "C-M-s") 'isearch-forward)
 (global-set-key (kbd "C-M-r") 'isearch-backward)
+(global-set-key (kbd "C-, p b") 'helm-projectile-switch-to-buffer)
 ;; (global-set-key (kbd "M-%") 'query-replace-regexp)
 ;; (global-set-key (kbd "C-M-%") 'query-replace)
 ;; (global-set-key (kbd "C-M-h") 'backward-kill-word)
