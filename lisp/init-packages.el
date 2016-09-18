@@ -49,6 +49,7 @@
                       yaml-mode
                       dockerfile-mode
                       systemd
+                      nginx-mode
 
                       ;; style
                       color-theme-sanityinc-tomorrow
