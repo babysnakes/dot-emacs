@@ -1,4 +1,8 @@
 ;; Unset my custom LANG environment to avoid spell checker issues
+
+;; Added by Package.el.
+(package-initialize)
+
 (setenv "LANG")
 (setenv "LC_TIME")
 

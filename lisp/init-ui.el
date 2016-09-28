@@ -53,7 +53,7 @@
 (defun project-title ()
   "Name the frame according to the projectile project (or main)"
   (setq frame-title-format
-        `("" invocation-name " ("
+        `("Emacs ("
           (:eval (if (projectile-project-p)
                      (file-name-base (substring (projectile-project-p) 0 -1))
                    "main"))
@@ -68,7 +68,7 @@
   "Add a string to the title (inside parenthesis after invocation name)"
   (interactive "sEnter short description: ")
   (setq frame-title-format
-        `("" invocation-name " (" ,s ") - "
+        `("Emacs (" ,s ") - "
           (:eval (if (buffer-file-name)
                      (abbreviate-file-name (buffer-file-name))
                    "%b")))))
