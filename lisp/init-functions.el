@@ -35,6 +35,12 @@
   (my-indent-buffer)
   (whitespace-cleanup))
 
+(defun highlight-long-lines ()
+  (setq whitespace-style '(face tabs empty trailing lines-tail)))
+
+(defun hide-long-lines ()
+  (setq whitespace-style '(face tabs empty trailing)))
+
 (defun my-local-comment-auto-fill ()
   (set (make-local-variable 'comment-auto-fill-only-comments) t)
   (auto-fill-mode t))

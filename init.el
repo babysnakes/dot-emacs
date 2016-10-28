@@ -68,6 +68,8 @@
 (global-set-key (kbd "C-M-s") 'isearch-forward)
 (global-set-key (kbd "C-M-r") 'isearch-backward)
 (global-set-key (kbd "C-, p b") 'helm-projectile-switch-to-buffer)
+(global-set-key (kbd "C-, d p") 'delete-pair)
+(global-set-key (kbd "C-, c") 'compile)
 ;; (global-set-key (kbd "M-%") 'query-replace-regexp)
 ;; (global-set-key (kbd "C-M-%") 'query-replace)
 ;; (global-set-key (kbd "C-M-h") 'backward-kill-word)
@@ -122,7 +124,7 @@
 ;; Whitespace mode
 (require 'whitespace)
 (setq whitespace-line-column 80) ;; limit line length
-(setq whitespace-style '(face tabs empty trailing lines-tail))
+(highlight-long-lines)
 (global-whitespace-mode 1)
 ;; company-mode completion
 (add-hook 'after-init-hook 'global-company-mode)
