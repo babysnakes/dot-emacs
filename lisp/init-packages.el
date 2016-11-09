@@ -66,7 +66,8 @@
                       ace-jump-mode
                       paredit
                       smartparens
-                      window-numbering))
+                      window-numbering
+                      multiple-cursors))
 
 (dolist (p my-packages)
   (when (not (package-installed-p p))
