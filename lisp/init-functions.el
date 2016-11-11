@@ -36,9 +36,11 @@
   (whitespace-cleanup))
 
 (defun highlight-long-lines ()
+  (interactive)
   (setq whitespace-style '(face tabs empty trailing lines-tail)))
 
 (defun hide-long-lines ()
+  (interactive)
   (setq whitespace-style '(face tabs empty trailing)))
 
 (defun my-local-comment-auto-fill ()
