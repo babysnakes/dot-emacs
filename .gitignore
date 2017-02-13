@@ -11,3 +11,4 @@
 /bookmarks
 *.elc
 /projectile.cache
+/ensime/
