@@ -185,6 +185,9 @@
 
 ;; TODO: ispell/hunspell check for better configuration (e.g. rw-hunspell)
 ;; also consider using flyspell-prog-mode!
+(custom-set-variables
+ '(ispell-program-name "hunspell")
+ '(ispell-local-dictionary "en_US"))
 
 (setq hippie-expand-try-functions-list
       '(try-expand-dabbrev
