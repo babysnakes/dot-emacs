@@ -23,4 +23,5 @@ Some modes require binaries to be present in the system:
 * [Tern](http://ternjs.net) is required for using `tern-mode` in
   javascript.
 * *js-beautify* is required by `web-beautify`.
+* *hunspell* with `en_US` dictionary is required for flyspell to work.
 * Maybe more ...
