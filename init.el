@@ -295,19 +295,21 @@
   (ag ag-files ag-regexp ag-project ag-project-files ag-project-regexp))
 
 (use-package yasnippet
-  :commands yas-global-mode)
+  :commands yas-global-mode
+  :init
+  (when (package-installed-p 'yasnippet)
+    (yas-global-mode)))
 
 (use-package paredit
   :commands enable-paredit-mode
   :bind (:map paredit-mode-map
               ("M-)" . paredit-forward-slurp-sexp)
               ("M-(" . paredit-backward-slurp-sexp))
-  :config
-  ;; I don't enable paredit mode on these modes globally because it
-  ;; throws error if paredit is not installed.
-  (dolist (mode '(scheme emacs-lisp lisp))
-    (add-hook (intern (concat (symbol-name mode) "-mode-hook"))
-              'enable-paredit-mode)))
+  :init
+  (when (package-installed-p 'paredit)
+    (dolist (mode '(scheme emacs-lisp lisp))
+      (add-hook (intern (concat (symbol-name mode) "-mode-hook"))
+                'enable-paredit-mode))))
 
 (use-package smartparens
   :commands smartparens-mode
