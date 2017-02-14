@@ -453,3 +453,7 @@
 
 (use-package nginx-mode
   :commands nginx-mode)
+
+;;; Miscelenious packages
+(use-package edit-server
+  :commands edit-server-start)
