@@ -424,12 +424,14 @@
 (use-package haskell-mode
   :defer t)
 
-;;; Lilypond (for mac, on linux it's usually loaded from site-lisp)
-(let ((lilypond-path "/Applications/LilyPond.app/Contents/Resources/share/emacs/site-lisp"))
-  (when (file-accessible-directory-p lilypond-path)
-    (custom-set-variables '(load-path (append (list lilypond-path) load-path)))
-    (load-file (concat lilypond-path "/lilypond-init.el"))
-    (custom-set-variables '(LilyPond-pdf-command "open"))))
+;;; Lilypond
+(use-package lilypond-mode
+  :mode ("\\.ly$" . LilyPond-mode)
+  ;; This load-path works on mac. Linux is hopefully site-packages.
+  :load-path
+  "/Applications/LilyPond.app/Contents/Resources/share/emacs/site-lisp"
+  :config
+  (custom-set-variables '(LilyPond-pdf-command "open")))
 
 ;;; Other formats
 (use-package markdown-mode
