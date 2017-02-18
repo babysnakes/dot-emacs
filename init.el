@@ -346,15 +346,12 @@
   :mode ("\\.erl\\'" . erlang-mode))
 
 (use-package elixir-mode
-  :defer t)
-
-(use-package alchemist
+  :defer t
   ;; Do I want to use the bindings below?
   ;; (define-key erlang-mode-map (kbd "M-,") 'alchemist-goto-jump-back)
-  :commands alchemist-mode)
-
-(use-package elixir-yasnippets
-  :defer t)
+  :config
+  (use-package alchemist)
+  (use-package elixir-yasnippets))
 
 ;;; Ruby
 (setq ruby-deep-indent-paren nil)
