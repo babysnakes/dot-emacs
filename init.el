@@ -315,6 +315,9 @@
   :bind
   ("C-S-SPC" . company-complete))
 
+(use-package flycheck
+  :commands flycheck-mode)
+
 ;;; Clojure
 (use-package clojure-mode
   :defer t
@@ -426,13 +429,15 @@
 
 ;;; GoLang
 (use-package go-mode
-  :bind (:map go-mode-map)
+  :bind
+  (:map go-mode-map
+        ("M-." . godef-jump))
   :config
   (add-hook 'go-mode-hook
             (lambda ()
               (custom-set-variables '(indent-tabs-mode t)
-                                    '(tab-width 2))
-              (whitespace-toggle-options 'tabs) ; doesn't seem to work :(
+                                    '(tab-width 2)
+                                    '(gofmt-command "goimports"))
               (add-hook 'before-save-hook 'gofmt-before-save))))
 
 (defun full-go-environment ()
@@ -446,7 +451,8 @@
       (add-hook 'go-mode-hook
                 (lambda ()
                   (set (make-local-variable 'company-backends) '(company-go))
-                  (company-mode))))))
+                  (company-mode)
+                  (flycheck-mode))))))
 
 ;;; Haskell
 (use-package haskell-mode
