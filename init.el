@@ -330,19 +330,16 @@
   :bind (:map clojure-mode-map
               ("C-c , c" . clojure-cheatsheet))
   :config
-  (add-hook 'cider-repl-mode-hook 'enable-paredit-mode))
+  (add-hook 'cider-repl-mode-hook 'enable-paredit-mode)
+  (when (package-installed-p 'company)
+    (add-hook 'cider-repl-mode-hook #'company-mode)
+    (add-hook 'cider-mode-hook #'company-mode)))
 
 (use-package clojure-cheatsheet
   :commands clojure-cheatsheet)
 
 (use-package clj-refactor
   :commands (clj-refactor-mode cljr-add-keybindings-with-prefixq))
-
-(defun full-clojure-env ()
-  "Add more clojure specific setting to the working environment"
-  (interactive)
-  (add-hook 'cider-repl-mode-hook #'company-mode)
-  (add-hook 'cider-mode-hook #'company-mode))
 
 ;;; Elixir/Erlang
 (use-package erlang
@@ -434,21 +431,18 @@
                                     '(tab-width 2)
                                     '(gofmt-command "goimports"))
               (add-hook 'before-save-hook 'gofmt-before-save)))
-  (use-package godoctor))
-
-(defun full-go-environment ()
-  "Load a full go environment including company-mode completions"
-  (interactive)
-  (let ((godoc-dir (concat (file-name-as-directory (getenv "GOPATH"))
-                           "src/github.com/nsf/gocode/emacs-company")))
-    (when (file-exists-p godoc-dir)
-      (add-to-list 'load-path godoc-dir)
-      (require 'company-go)
-      (add-hook 'go-mode-hook
-                (lambda ()
-                  (set (make-local-variable 'company-backends) '(company-go))
-                  (company-mode)
-                  (flycheck-mode))))))
+  (use-package godoctor)
+  (let ((gocode-dir (concat (file-name-as-directory (getenv "GOPATH"))
+                            "src/github.com/nsf/gocode/emacs-company")))
+    (when (package-installed-p 'company)
+      (use-package company-go
+        :load-path gocode-dir
+        :config
+        (add-hook 'go-mode-hook
+                  (lambda ()
+                    (set (make-local-variable 'company-backends) '(company-go))
+                    (company-mode)
+                    (flycheck-mode)))))))
 
 ;;; Haskell
 (use-package haskell-mode
