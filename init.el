@@ -389,7 +389,7 @@
   ;; library or as minor mode. It's also possible to add an
   ;; interpreter to it (node).
   :config
-  (custom-set-variables '(js2-basic-offset 2)))
+  (setq js2-basic-offset 2))
 
 (use-package tern
   :commands tern-mode)
@@ -412,12 +412,11 @@
 (use-package multi-web-mode
   :commands multi-web-mode
   :config
-  (custom-set-variables
-   '(mweb-default-major-mode 'html-mode)
-   '(mweb-tags '((js-mode "<script[^>]*>" "</script>")
-                 (css-mode "<style[^>]*>" "</style>")
-                 (ruby-mode "<%[^ ]?" "[^ ]?%>")))
-   '(mweb-filename-extensions '("htm" "html" "erb"))))
+  (setq mweb-default-major-mode 'html-mode
+        mweb-tags '((js-mode "<script[^>]*>" "</script>")
+                    (css-mode "<style[^>]*>" "</style>")
+                    (ruby-mode "<%[^ ]?" "[^ ]?%>"))
+        mweb-filename-extensions '("htm" "html" "erb")))
 
 ;;; GoLang
 (use-package go-mode
@@ -427,9 +426,9 @@
   :config
   (add-hook 'go-mode-hook
             (lambda ()
-              (custom-set-variables '(indent-tabs-mode t)
-                                    '(tab-width 2)
-                                    '(gofmt-command "goimports"))
+              (setq indent-tabs-mode t
+                    tab-width 2
+                    gofmt-command "goimports")
               (add-hook 'before-save-hook 'gofmt-before-save)))
   (use-package godoctor)
   (let ((gocode-dir (concat (file-name-as-directory (getenv "GOPATH"))
@@ -455,7 +454,7 @@
   :load-path
   "/Applications/LilyPond.app/Contents/Resources/share/emacs/site-lisp"
   :config
-  (custom-set-variables '(LilyPond-pdf-command "open")))
+  (setq LilyPond-pdf-command "open"))
 
 ;;; Other formats
 (use-package markdown-mode
