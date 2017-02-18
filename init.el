@@ -438,7 +438,8 @@
               (custom-set-variables '(indent-tabs-mode t)
                                     '(tab-width 2)
                                     '(gofmt-command "goimports"))
-              (add-hook 'before-save-hook 'gofmt-before-save))))
+              (add-hook 'before-save-hook 'gofmt-before-save)))
+  (use-package godoctor))
 
 (defun full-go-environment ()
   "Load a full go environment including company-mode completions"
