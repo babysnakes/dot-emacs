@@ -249,7 +249,7 @@
   :bind
   (("C-c h" . helm-mini)
    ("M-x" . helm-M-x))
-  :config
+  :init
   (helm-mode 1))
 
 (use-package neotree
