@@ -311,11 +311,9 @@
   (require 'smartparens-config))
 
 (use-package company
-  :commands global-company-mode
+  :commands company-mode
   :bind
-  ("C-S-SPC" . company-complete)
-  :config
-  (global-company-mode 1))
+  ("C-S-SPC" . company-complete))
 
 ;;; Clojure
 (use-package clojure-mode
@@ -341,6 +339,12 @@
 
 (use-package clj-refactor
   :commands (clj-refactor-mode cljr-add-keybindings-with-prefixq))
+
+(defun full-clojure-env ()
+  "Add more clojure specific setting to the working environment"
+  (interactive)
+  (add-hook 'cider-repl-mode-hook #'company-mode)
+  (add-hook 'cider-mode-hook #'company-mode))
 
 ;;; Elixir/Erlang
 (use-package erlang
@@ -438,8 +442,11 @@
                            "src/github.com/nsf/gocode/emacs-company")))
     (when (file-exists-p godoc-dir)
       (add-to-list 'load-path godoc-dir)
-      (global-company-mode)
-      (require 'company-go))))
+      (require 'company-go)
+      (add-hook 'go-mode-hook
+                (lambda ()
+                  (set (make-local-variable 'company-backends) '(company-go))
+                  (company-mode))))))
 
 ;;; Haskell
 (use-package haskell-mode
