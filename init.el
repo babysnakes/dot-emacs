@@ -40,14 +40,6 @@
   (my-indent-buffer)
   (whitespace-cleanup))
 
-(defun highlight-long-lines ()
-  (interactive)
-  (setq whitespace-style '(face tabs empty trailing lines-tail)))
-
-(defun hide-long-lines ()
-  (interactive)
-  (setq whitespace-style '(face tabs empty trailing)))
-
 (defun my-local-comment-auto-fill ()
   (set (make-local-variable 'comment-auto-fill-only-comments) t)
   (auto-fill-mode t))
@@ -226,9 +218,11 @@
 
 ;; whitespace
 (require 'whitespace)
-(setq whitespace-line-column 80) ;; limit line length
-(highlight-long-lines)
+(custom-set-variables
+ '(whitespace-line-column 80)
+ '(whitespace-style '(face tabs empty trailing lines-tail)))
 (global-whitespace-mode 1)
+(global-set-key (kbd "C-, w t") 'whitespace-toggle-options)
 
 
 ;;; Setup use-package
