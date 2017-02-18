@@ -420,6 +420,27 @@
                  (ruby-mode "<%[^ ]?" "[^ ]?%>")))
    '(mweb-filename-extensions '("htm" "html" "erb"))))
 
+;;; GoLang
+(use-package go-mode
+  :bind (:map go-mode-map)
+  :config
+  (add-hook 'go-mode-hook
+            (lambda ()
+              (custom-set-variables '(indent-tabs-mode t)
+                                    '(tab-width 2))
+              (whitespace-toggle-options 'tabs) ; doesn't seem to work :(
+              (add-hook 'before-save-hook 'gofmt-before-save))))
+
+(defun full-go-environment ()
+  "Load a full go environment including company-mode completions"
+  (interactive)
+  (let ((godoc-dir (concat (file-name-as-directory (getenv "GOPATH"))
+                           "src/github.com/nsf/gocode/emacs-company")))
+    (when (file-exists-p godoc-dir)
+      (add-to-list 'load-path godoc-dir)
+      (global-company-mode)
+      (require 'company-go))))
+
 ;;; Haskell
 (use-package haskell-mode
   :defer t)
