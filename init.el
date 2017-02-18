@@ -125,16 +125,15 @@
 
 (show-paren-mode t)
 (setq-default indent-tabs-mode nil)
-(custom-set-variables
- '(visible-bell t)
- '(x-select-enable-clipboard t)
- '(x-select-enable-primary t)
- '(mouse-yank-at-point t)
- '(inhibit-startup-screen t)
- '(ring-bell-function 'ignore) ; Avoid annoying square in gui
- '(scroll-margin 0)            ; nice scrolling
- '(scroll-conservatively 100000)
- '(scroll-preserve-screen-position 1))
+(setq visible-bell t
+      x-select-enable-clipboard t
+      x-select-enable-primary t
+      mouse-yank-at-point t
+      inhibit-startup-screen t
+      ring-bell-function 'ignore ; Avoid annoying square in gui
+      scroll-margin 0            ; nice scrolling
+      scroll-conservatively 100000
+      scroll-preserve-screen-position 1)
 
 ;; by default disable menu-bar, scroll-bar and tool-bar.
 (menu-bar-mode -1)
@@ -146,11 +145,10 @@
 
 ;; meaningful names for buffers with the same name
 (require 'uniquify)
-(custom-set-variables
- '(uniquify-separator "/")
- '(uniquify-after-kill-buffer-p t)    ; rename after killing uniquified
- '(uniquify-ignore-buffers-re "^\\*") ; don't muck with special buffers
- '(uniquify-buffer-name-style 'forward))
+(setq uniquify-separator "/"
+      uniquify-after-kill-buffer-p t    ; rename after killing uniquified
+      uniquify-ignore-buffers-re "^\\*" ; don't muck with special buffers
+      uniquify-buffer-name-style 'forward)
 
 ;; mode line settings
 (line-number-mode t)
@@ -172,14 +170,12 @@
 ;; remember last edit place in file.
 (require 'saveplace)
 (setq-default save-place t)
-(custom-set-variables
- '(save-place-file (concat user-emacs-directory "places")))
+(setq save-place-file (concat user-emacs-directory "places"))
 
 ;; TODO: ispell/hunspell check for better configuration (e.g. rw-hunspell)
 ;; also consider using flyspell-prog-mode!
-(custom-set-variables
- '(ispell-program-name "hunspell")
- '(ispell-local-dictionary "en_US"))
+(setq ispell-program-name "hunspell"
+      ispell-local-dictionary "en_US")
 
 (setq hippie-expand-try-functions-list
       '(try-expand-dabbrev
@@ -218,9 +214,8 @@
 
 ;; whitespace
 (require 'whitespace)
-(custom-set-variables
- '(whitespace-line-column 80)
- '(whitespace-style '(face tabs empty trailing lines-tail)))
+(setq whitespace-line-column 80
+      whitespace-style '(face tabs empty trailing lines-tail))
 (global-whitespace-mode 1)
 (global-set-key (kbd "C-, w t") 'whitespace-toggle-options)
 
@@ -386,7 +381,7 @@
   (add-hook 'projectile-mode-hook 'projectile-rails-on))
 
 ;;; Javascript
-(custom-set-variables '(js-indent-level 2))
+(setq js-indent-level 2)
 
 (use-package json-mode
   :defer t)
