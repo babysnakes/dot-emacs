@@ -426,7 +426,9 @@
               (setq indent-tabs-mode t
                     tab-width 2
                     gofmt-command "goimports")
-              (add-hook 'before-save-hook 'gofmt-before-save)))
+              (add-hook 'before-save-hook 'gofmt-before-save)
+              (make-local-variable whitespace-style
+                                   '(face tabs empty trailing lines-tail))))
   (use-package godoctor)
   (let ((gocode-dir (concat (file-name-as-directory (getenv "GOPATH"))
                             "src/github.com/nsf/gocode/emacs-company")))
