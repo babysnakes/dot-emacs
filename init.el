@@ -388,6 +388,9 @@
   :config
   (setq js2-basic-offset 2))
 
+(use-package rjsx-mode
+  :commands rjsx-mode)
+
 (use-package tern
   :commands tern-mode)
 
