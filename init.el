@@ -418,6 +418,12 @@
                     (ruby-mode "<%[^ ]?" "[^ ]?%>"))
         mweb-filename-extensions '("htm" "html" "erb")))
 
+(use-package web-mode
+  :commands web-mode
+  :config
+  (setq web-mode-code-indent-offset 2
+        web-mode-markup-indent-offset 2))
+
 ;;; GoLang
 (use-package go-mode
   :bind
