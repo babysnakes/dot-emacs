@@ -422,7 +422,8 @@
   :commands web-mode
   :config
   (setq web-mode-code-indent-offset 2
-        web-mode-markup-indent-offset 2))
+        web-mode-markup-indent-offset 2
+        web-mode-css-indent-offset 2))
 
 ;;; GoLang
 (use-package go-mode
