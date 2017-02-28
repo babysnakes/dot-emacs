@@ -386,10 +386,9 @@
   ;; library or as minor mode. It's also possible to add an
   ;; interpreter to it (node).
   :config
-  (setq js2-basic-offset 2))
-
-(use-package rjsx-mode
-  :commands rjsx-mode)
+  (setq js2-basic-offset 2)
+  (add-hook 'js2-mode-hook '(lambda ()
+                              (electric-pair-mode 1))))
 
 (use-package tern
   :commands tern-mode)
