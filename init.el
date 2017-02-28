@@ -198,7 +198,7 @@
 (global-set-key (kbd "C-x m") 'eshell)
 (global-set-key (kbd "M-/") 'hippie-expand)
 (global-set-key (kbd "C-x C-b") 'ibuffer)
-(global-set-key (kbd "C-x C-i") 'imenu)
+(global-set-key (kbd "C-x C-i") 'helm-imenu)
 (global-set-key (kbd "C-c r") 'revert-buffer)
 (global-set-key (kbd "C-c q") 'join-line)
 (global-set-key (kbd "C-s") 'isearch-forward-regexp)
