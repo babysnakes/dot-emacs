@@ -385,10 +385,21 @@
   ;; Need to decide wether we want to use it as the main javascript
   ;; library or as minor mode. It's also possible to add an
   ;; interpreter to it (node).
+  :bind (:map js2-jsx-mode-map
+              ("C-c /" . sgml-close-tag))
   :config
   (setq js2-basic-offset 2)
-  (add-hook 'js2-mode-hook '(lambda ()
-                              (electric-pair-mode 1))))
+  (add-hook 'js2-mode-hook
+            '(lambda ()
+               (electric-pair-mode 1)
+               (js2-imenu-extras-mode 1)))
+  (use-package company-tern
+    :config
+    (add-to-list 'company-backends 'company-tern)
+    (add-hook 'js2-mode-hook
+              '(lambda ()
+                 (tern-mode t)
+                 (company-mode t)))))
 
 (use-package rjsx-mode
   :commands rjsx-mode)
@@ -425,7 +436,8 @@
   :config
   (setq web-mode-code-indent-offset 2
         web-mode-markup-indent-offset 2
-        web-mode-css-indent-offset 2))
+        web-mode-css-indent-offset 2
+        web-mode-content-types-alist '(("json" . "\\.ejs$"))))
 
 ;;; GoLang
 (use-package go-mode
