@@ -220,6 +220,11 @@
 (global-set-key (kbd "C-, w t") 'whitespace-toggle-options)
 
 
+;;; Project specific settings
+(let ((projects-file (concat (expand-file-name user-emacs-directory) "project-specific.el")))
+  (when (file-exists-p projects-file)
+    (load projects-file)))
+
 ;;; Setup use-package
 (require 'package)
 (setq package-enable-at-startup nil)

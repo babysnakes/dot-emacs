@@ -12,3 +12,4 @@
 *.elc
 /projectile.cache
 /ensime/
+/project-specific.el
