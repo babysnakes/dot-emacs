@@ -469,7 +469,10 @@
                   (lambda ()
                     (set (make-local-variable 'company-backends) '(company-go))
                     (company-mode)
-                    (flycheck-mode)))))))
+                    (flycheck-mode))))))
+  (use-package gotest))
+
+(use-package helm-go-package)
 
 ;;; Haskell
 (use-package haskell-mode
