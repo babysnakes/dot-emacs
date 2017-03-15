@@ -271,6 +271,9 @@
   :ensure t
   :bind ("C-, p b" . helm-projectile-switch-to-buffer))
 
+(use-package hydra
+  :commands defhydra)
+
 (use-package window-numbering
   :commands window-numbering-mode)
 
@@ -470,6 +473,12 @@
                     (set (make-local-variable 'company-backends) '(company-go))
                     (company-mode)
                     (flycheck-mode))))))
+  (when (package-installed-p 'hydra)
+    (defhydra hydra-godoc (:exit t)
+      "Godoc"
+      ("g" godoc "doc")
+      ("p" godoc-at-point "cursor"))
+    (bind-key "C-, g d" 'hydra-godoc/body go-mode-map))
   (use-package gotest))
 
 (use-package helm-go-package)
