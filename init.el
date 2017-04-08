@@ -511,7 +511,9 @@
   :commands systemd-mode)
 
 (use-package nginx-mode
-  :commands nginx-mode)
+  :commands nginx-mode
+  :config
+  (setq nginx-indent-level 2))
 
 ;;; Miscelenious packages
 (use-package edit-server
