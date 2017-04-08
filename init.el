@@ -253,7 +253,8 @@
   (helm-mode 1))
 
 (use-package neotree
-  :bind ("C-, t" . neotree-toggle))
+  :bind (("C-, t" . neotree-toggle)
+         ("C-, n p" . neotree-projectile-action)))
 
 (use-package magit
   :ensure t
