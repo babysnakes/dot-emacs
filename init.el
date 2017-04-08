@@ -480,7 +480,8 @@
       ("g" godoc "doc")
       ("p" godoc-at-point "cursor"))
     (bind-key "C-, g d" 'hydra-godoc/body go-mode-map))
-  (use-package gotest))
+  (use-package gotest)
+  (use-package go-guru))
 
 (use-package helm-go-package)
 
