@@ -481,7 +481,21 @@
       ("p" godoc-at-point "cursor"))
     (bind-key "C-, g d" 'hydra-godoc/body go-mode-map))
   (use-package gotest)
-  (use-package go-guru))
+  (use-package go-eldoc
+    :config
+    (add-hook 'go-mode-hook 'go-eldoc-setup))
+  (use-package go-guru
+    :config
+    (defun project-guru-scope ()
+      "Define the project as go-guru scope excluding vendor"
+      (interactive)
+      (if-let ((proot (projectile-project-p))
+               (go-pth (locate-dominating-file proot "src"))
+               (go-src-dir (concat (expand-file-name go-pth) "src/"))
+               (m-package (substring proot (length go-src-dir) -1))
+               (g-scope (concat m-package "/...,-" m-package "/vendor/...")))
+          (setq go-guru-scope g-scope)
+        (message "false")))))
 
 (use-package helm-go-package)
 
