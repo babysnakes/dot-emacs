@@ -512,6 +512,10 @@
   :config
   (setq LilyPond-pdf-command "open"))
 
+;;; Groovy (jenkinsfile, etc)
+(use-package groovy-mode
+  :mode ("Jenkinsfile" . groovy-mode))
+
 ;;; Other formats
 (use-package markdown-mode
   ;; I used to set css-paths but I don't use preview anymore
