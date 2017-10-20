@@ -420,6 +420,10 @@
   :bind (:map json-mode-map
               ("C-, f j" . web-beautify-js)))
 
+;; R
+(use-package ess
+  :defer t)
+
 ;;; Scala
 (use-package scala-mode
   :defer t)
@@ -538,3 +542,6 @@
 ;;; Miscelenious packages
 (use-package edit-server
   :commands edit-server-start)
+
+(use-package fold-this
+  :commands fold-this)
