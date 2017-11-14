@@ -467,6 +467,8 @@
                     whitespace-style '(face empty trailing lines-tail))
               (add-hook 'before-save-hook 'gofmt-before-save)))
   (use-package godoctor)
+  (use-package go-rename
+    :commands go-rename)
   (let ((gocode-dir (concat (file-name-as-directory (car (split-string (getenv "GOPATH") ":")))
                             "src/github.com/nsf/gocode/emacs-company")))
     (when (package-installed-p 'company)
