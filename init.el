@@ -465,7 +465,9 @@
                     tab-width 2
                     gofmt-command "goimports"
                     whitespace-style '(face empty trailing lines-tail))
-              (add-hook 'before-save-hook 'gofmt-before-save)))
+              (add-hook 'before-save-hook 'gofmt-before-save)
+              (when (package-installed-p 'flycheck-mode)
+                (flycheck-mode))))
   (use-package godoctor)
   (use-package go-rename
     :commands go-rename)
@@ -478,8 +480,7 @@
         (add-hook 'go-mode-hook
                   (lambda ()
                     (set (make-local-variable 'company-backends) '(company-go))
-                    (company-mode)
-                    (flycheck-mode))))))
+                    (company-mode))))))
   (when (package-installed-p 'hydra)
     (defhydra hydra-godoc (:exit t)
       "Godoc"
