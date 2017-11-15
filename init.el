@@ -458,53 +458,59 @@
   (:map go-mode-map
         ("M-." . godef-jump))
   :config
-  (add-hook 'go-mode-hook
-            (lambda ()
-              (make-local-variable 'whitespace-style)
-              (setq indent-tabs-mode t
-                    tab-width 2
-                    gofmt-command "goimports"
-                    whitespace-style '(face empty trailing lines-tail))
-              (add-hook 'before-save-hook 'gofmt-before-save)
-              (when (package-installed-p 'flycheck-mode)
-                (flycheck-mode))))
-  (use-package godoctor)
-  (use-package go-rename
-    :commands go-rename)
-  (let ((gocode-dir (concat (file-name-as-directory (car (split-string (getenv "GOPATH") ":")))
-                            "src/github.com/nsf/gocode/emacs-company")))
-    (when (package-installed-p 'company)
-      (use-package company-go
-        :load-path gocode-dir
-        :config
-        (add-hook 'go-mode-hook
-                  (lambda ()
-                    (set (make-local-variable 'company-backends) '(company-go))
-                    (company-mode))))))
-  (when (package-installed-p 'hydra)
-    (defhydra hydra-godoc (:exit t)
-      "Godoc"
-      ("g" godoc "doc")
-      ("p" godoc-at-point "cursor"))
-    (bind-key "C-, g d" 'hydra-godoc/body go-mode-map))
-  (use-package gotest)
-  (use-package go-eldoc
-    :config
-    (add-hook 'go-mode-hook 'go-eldoc-setup))
-  (use-package go-guru
-    :config
-    (defun project-guru-scope ()
-      "Define the project as go-guru scope excluding vendor"
-      (interactive)
-      (if-let ((proot (projectile-project-p))
-               (go-pth (locate-dominating-file proot "src"))
-               (go-src-dir (concat (expand-file-name go-pth) "src/"))
-               (m-package (substring proot (length go-src-dir) -1))
-               (g-scope (concat m-package "/...,-" m-package "/vendor/...")))
-          (setq go-guru-scope g-scope)
-        (message "false")))))
+  (let ((go-path-lib-dir
+         (file-name-as-directory (car (split-string (getenv "GOPATH") ":")))))
+    (add-hook 'go-mode-hook
+              (lambda ()
+                (make-local-variable 'whitespace-style)
+                (setq indent-tabs-mode t
+                      tab-width 2
+                      gofmt-command "goimports"
+                      whitespace-style '(face empty trailing lines-tail))
+                (add-hook 'before-save-hook 'gofmt-before-save)
+                (when (package-installed-p 'flycheck)
+                  (flycheck-mode))))
+    (use-package godoctor)
+    (use-package go-rename
+      :commands go-rename)
+    (let ((gocode-dir
+           (concat go-path-lib-dir "src/github.com/nsf/gocode/emacs-company"))
+          (expanderr-dir
+           (concat go-path-lib-dir "src/github.com/stapelberg/expanderr/lisp")))
+      (when (package-installed-p 'company)
+        (use-package company-go
+          :load-path gocode-dir
+          :config
+          (add-hook 'go-mode-hook
+                    (lambda ()
+                      (set (make-local-variable 'company-backends) '(company-go))
+                      (company-mode)))))
+      (use-package go-expanderr
+        :load-path expanderr-dir))
+    (when (package-installed-p 'hydra)
+      (defhydra hydra-godoc (:exit t)
+        "Godoc"
+        ("g" godoc "doc")
+        ("p" godoc-at-point "cursor"))
+      (bind-key "C-, g d" 'hydra-godoc/body go-mode-map))
+    (use-package gotest)
+    (use-package go-eldoc
+      :config
+      (add-hook 'go-mode-hook 'go-eldoc-setup))
+    (use-package go-guru
+      :config
+      (defun project-guru-scope ()
+        "Define the project as go-guru scope excluding vendor"
+        (interactive)
+        (if-let ((proot (projectile-project-p))
+                 (go-pth (locate-dominating-file proot "src"))
+                 (go-src-dir (concat (expand-file-name go-pth) "src/"))
+                 (m-package (substring proot (length go-src-dir) -1))
+                 (g-scope (concat m-package "/...,-" m-package "/vendor/...")))
+            (setq go-guru-scope g-scope)
+          (message "false")))))
 
-(use-package helm-go-package)
+  (use-package helm-go-package))
 
 ;;; Haskell
 (use-package haskell-mode
